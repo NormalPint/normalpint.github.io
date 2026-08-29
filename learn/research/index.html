@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>상기도 근육 훈련 연구 근거 — 무엇이 어디까지 확인되었나 | 코고리스</title>
+<meta name="description" content="호기근 강도 훈련(EMST)·구인두 운동·관악기 연주 등 상기도 근육 훈련 임상 연구 6건의 설계와 결과 수치를 표로 정리했습니다. AHI 감소 폭, 코골이 지표 변화, 그리고 각 근거의 한계까지.">
+<link rel="canonical" href="https://normalpint.github.io/learn/research/">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="코고리스">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="상기도 근육 훈련 연구 근거 — 무엇이 어디까지 확인되었나">
+<meta property="og:description" content="EMST·구인두 운동·관악기 연주 임상 연구 6건의 설계와 수치를 한 표로 정리하고, 근거의 한계도 함께 밝혔습니다.">
+<meta property="og:url" content="https://normalpint.github.io/learn/research/">
+<style id="site-css">
+/* 코고리스 — 공용 스타일. 텍스트 우선, 시맨틱 구조 유지. */
+
+:root{
+  --paper:#F5F7F5;
+  --raised:#FFFFFF;
+  --ink:#17211D;
+  --ink-soft:#4C5A54;
+  --ink-faint:#83908A;
+  --line:#DCE3DF;
+  --line-soft:#EAEEEC;
+  --accent:#1F6F63;
+  --accent-ink:#0E4C43;
+  --accent-tint:#E4F1EC;
+  --accent-line:#BEDCD2;
+  --warn:#A3402F;
+  --warn-tint:#F8EAE6;
+  --shadow:0 1px 2px rgba(20,30,26,.05), 0 10px 30px -18px rgba(20,30,26,.18);
+  --maxw:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111917;
+    --raised:#18221F;
+    --ink:#E6EDE9;
+    --ink-soft:#A6B4AE;
+    --ink-faint:#6F7E78;
+    --line:#2A3A35;
+    --line-soft:#212E2A;
+    --accent:#5FC1AE;
+    --accent-ink:#8EDAC8;
+    --accent-tint:#16302A;
+    --accent-line:#2B5048;
+    --warn:#E48876;
+    --warn-tint:#39211C;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111917; --raised:#18221F; --ink:#E6EDE9; --ink-soft:#A6B4AE;
+  --ink-faint:#6F7E78; --line:#2A3A35; --line-soft:#212E2A;
+  --accent:#5FC1AE; --accent-ink:#8EDAC8; --accent-tint:#16302A; --accent-line:#2B5048;
+  --warn:#E48876; --warn-tint:#39211C;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.8; -webkit-font-smoothing:antialiased;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto}}
+
+h1,h2,h3,h4{font-weight:700; color:var(--ink); line-height:1.4; text-wrap:balance; margin:0}
+a{color:var(--accent-ink); text-underline-offset:3px}
+a:hover{color:var(--accent)}
+img{max-width:100%; height:auto}
+
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:8px; top:8px; z-index:99; background:var(--raised); padding:10px 14px; border-radius:8px; border:1px solid var(--line)}
+
+/* ---------- 헤더 ---------- */
+.site-head{border-bottom:1px solid var(--line); background:var(--raised)}
+.site-head .inner{
+  max-width:var(--maxw); margin:0 auto; padding:16px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.brand{display:flex; align-items:baseline; gap:9px; text-decoration:none; color:var(--ink); font-weight:700; font-size:18px}
+.brand .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; align-self:center}
+.brand small{font-weight:500; font-size:12.5px; color:var(--ink-faint); letter-spacing:.02em}
+.site-nav{display:flex; gap:4px; flex-wrap:wrap}
+.site-nav a{
+  text-decoration:none; color:var(--ink-soft); font-size:14.5px; font-weight:500;
+  padding:7px 11px; border-radius:8px;
+}
+.site-nav a:hover{background:var(--line-soft); color:var(--ink)}
+.site-nav a[aria-current="page"]{background:var(--accent-tint); color:var(--accent-ink)}
+
+/* ---------- 레이아웃 ---------- */
+.shell{max-width:var(--maxw); margin:0 auto; padding:0 24px 88px}
+.doc{max-width:760px; margin:0 auto}
+@media (max-width:640px){ .shell{padding:0 18px 64px} body{font-size:16px} }
+
+.crumbs{font-size:13.5px; color:var(--ink-faint); padding:20px 0 0; margin:0}
+.crumbs a{color:var(--ink-faint); text-decoration:none}
+.crumbs a:hover{color:var(--ink); text-decoration:underline}
+.crumbs span{margin:0 6px}
+
+.doc-head{padding:26px 0 30px; border-bottom:1px solid var(--line); margin-bottom:38px}
+.kicker{
+  display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.06em;
+  color:var(--accent-ink); background:var(--accent-tint); border:1px solid var(--accent-line);
+  padding:4px 10px; border-radius:999px; margin-bottom:16px;
+}
+.doc-head h1{font-size:clamp(26px,4.4vw,36px); margin-bottom:14px}
+.summary{font-size:17.5px; color:var(--ink-soft); margin:0}
+.summary strong{color:var(--ink); font-weight:600}
+.doc-meta{margin-top:18px; font-size:13.5px; color:var(--ink-faint)}
+
+section{margin-bottom:44px; scroll-margin-top:24px}
+h2{font-size:23px; margin:0 0 14px; padding-top:6px}
+h3{font-size:18px; margin:30px 0 10px}
+h4{font-size:16px; margin:22px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px; padding-left:22px}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+strong{font-weight:600}
+
+/* 두괄식 답변 블록 */
+.answer{
+  background:var(--accent-tint); border:1px solid var(--accent-line);
+  border-radius:12px; padding:16px 20px; margin:0 0 22px;
+}
+.answer p{margin:0; color:var(--ink)}
+.answer p + p{margin-top:10px}
+
+/* ---------- 다이어그램 ---------- */
+figure.diagram{margin:0 0 28px}
+figure.diagram svg{width:100%; height:auto; display:block}
+figure.diagram figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:10px}
+.legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:12px; font-size:13.5px; color:var(--ink-soft)}
+.legend span{display:flex; align-items:center; gap:7px}
+.legend i{width:22px; height:12px; border-radius:4px; flex:none; display:block}
+.legend i.solid{background:var(--accent-tint); border:1.5px solid var(--accent)}
+.legend i.dashed{background:transparent; border:1.5px dashed var(--ink-faint)}
+
+/* ---------- 표 ---------- */
+figure.table{margin:0 0 26px}
+figure.table figcaption{font-size:13.5px; color:var(--ink-faint); margin-bottom:8px}
+.scroll{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--raised)}
+table{border-collapse:collapse; width:100%; min-width:520px}
+th,td{text-align:left; padding:11px 16px; font-size:15px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{font-size:13px; font-weight:600; color:var(--ink-faint); background:var(--line-soft); letter-spacing:.02em}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+td.good{color:var(--accent-ink); font-weight:600}
+td.bad{color:var(--warn); font-weight:600}
+
+/* ---------- 콜아웃 ---------- */
+.note,.caution{
+  border-radius:12px; padding:16px 20px; margin:0 0 24px; font-size:15.5px;
+  border:1px solid var(--line); background:var(--line-soft);
+}
+.caution{background:var(--warn-tint); border-color:transparent}
+.note p,.caution p{margin:0; color:var(--ink-soft)}
+.note p+p,.caution p+p{margin-top:10px}
+.note b,.caution b{color:var(--ink); display:block; margin-bottom:5px; font-size:13px; letter-spacing:.05em}
+.caution b{color:var(--warn)}
+
+/* ---------- FAQ ---------- */
+.qa{border-top:1px solid var(--line); padding:24px 0}
+.qa:last-of-type{border-bottom:1px solid var(--line)}
+.qa h3{margin:0 0 10px; font-size:18px}
+.qa p:last-child{margin-bottom:0}
+
+/* ---------- 카드 ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:0 0 30px}
+.card{
+  display:block; text-decoration:none; color:inherit; background:var(--raised);
+  border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:var(--shadow);
+}
+.card:hover{border-color:var(--accent-line)}
+.card h3{margin:0 0 7px; font-size:17px; color:var(--ink)}
+.card p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.65}
+.card .tag{font-size:12px; color:var(--ink-faint); letter-spacing:.05em; display:block; margin-bottom:9px}
+
+/* ---------- 참고문헌 ---------- */
+ol.refs{padding-left:20px; font-size:14.5px; color:var(--ink-soft); line-height:1.7}
+ol.refs li{margin-bottom:12px}
+ol.refs cite{font-style:normal; color:var(--ink)}
+
+/* ---------- 다음 단계 링크 ---------- */
+.onward{
+  border-top:1px solid var(--line); margin-top:8px; padding-top:22px;
+  font-size:15.5px; color:var(--ink-soft);
+}
+.onward a{font-weight:600}
+
+/* ---------- 제품 사진 ---------- */
+figure.shot{margin:0 0 26px}
+figure.shot img, figure.shot video{
+  width:100%; height:auto; display:block; border-radius:12px;
+  background:var(--line-soft); border:1px solid var(--line);
+}
+figure.shot figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:9px}
+.shot-pair{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 26px}
+@media (max-width:560px){ .shot-pair{grid-template-columns:1fr} }
+.shot-pair figure{margin:0}
+.shot-pair figcaption{text-align:center}
+figure.shot.narrow{max-width:420px}
+
+/* ---------- 제품 페이지 ---------- */
+.spec dt{font-size:13px; color:var(--ink-faint); letter-spacing:.04em; margin-top:14px}
+.spec dd{margin:2px 0 0; font-size:16px}
+.todo{
+  background:var(--warn-tint); color:var(--warn); border:1px dashed var(--warn);
+  border-radius:6px; padding:1px 7px; font-size:13.5px; font-weight:600; white-space:nowrap;
+}
+.buy{
+  display:inline-block; background:var(--accent); color:#FFFFFF; text-decoration:none;
+  font-weight:600; padding:13px 26px; border-radius:10px; font-size:16px; margin:6px 0 0;
+}
+.buy:hover{background:var(--accent-ink); color:#FFFFFF}
+
+/* ---------- 푸터 ---------- */
+.site-foot{border-top:1px solid var(--line); background:var(--raised); margin-top:40px}
+.site-foot .inner{max-width:var(--maxw); margin:0 auto; padding:34px 24px 44px; font-size:14px; color:var(--ink-soft)}
+.site-foot .disclose{
+  border-left:3px solid var(--accent-line); padding-left:14px; margin:0 0 22px; max-width:620px;
+}
+.site-foot nav{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:16px}
+.site-foot nav a{color:var(--ink-soft); text-decoration:none}
+.site-foot nav a:hover{color:var(--ink); text-decoration:underline}
+.site-foot .fine{font-size:13px; color:var(--ink-faint); margin:0}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://normalpint.github.io/learn/research/#article",
+  "headline": "상기도 근육 훈련 연구 근거 — 무엇이 어디까지 확인되었나",
+  "description": "호기근 강도 훈련(EMST)·구인두 운동·관악기 연주 등 상기도 근육 훈련 임상 연구 6건의 설계와 결과 수치, 그리고 각 근거의 한계를 정리했습니다.",
+  "inLanguage": "ko-KR",
+  "datePublished": "2026-08-29",
+  "dateModified": "2026-08-29",
+  "url": "https://normalpint.github.io/learn/research/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://normalpint.github.io/learn/research/" },
+  "isPartOf": { "@id": "https://normalpint.github.io/#website" },
+  "publisher": { "@id": "https://normalpint.github.io/#organization" },
+  "about": [
+    { "@type": "Thing", "name": "호기근 강도 훈련(EMST)" },
+    { "@type": "Thing", "name": "구인두 운동" },
+    { "@type": "Thing", "name": "무호흡·저호흡 지수(AHI)" }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Expiratory muscle strength training reduces oxidative stress and systemic inflammation in men with obstructive sleep apnea syndrome: a double-blinded, randomized parallel trial",
+      "author": "Erturk N, Celik A, Kahraman Yaman S, Yaman H, Unal F, Calik Kutukcu E",
+      "datePublished": "2024",
+      "isPartOf": { "@type": "Periodical", "name": "Sleep" },
+      "identifier": "doi:10.1093/sleep/zsae221"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Effects of respiratory muscle therapy on obstructive sleep apnea: a systematic review and meta-analysis",
+      "author": "Hsu B, Emperumal CP, Grbach VX, Padilla M, Enciso R",
+      "datePublished": "2020",
+      "isPartOf": { "@type": "Periodical", "name": "Journal of Clinical Sleep Medicine" },
+      "identifier": "doi:10.5664/jcsm.8318"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Myofunctional therapy to treat obstructive sleep apnea: a systematic review and meta-analysis",
+      "author": "Camacho M, Certal V, Abdullatif J, et al.",
+      "datePublished": "2015",
+      "isPartOf": { "@type": "Periodical", "name": "Sleep" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Effects of oropharyngeal exercises on patients with moderate obstructive sleep apnea syndrome",
+      "author": "Guimaraes KC, Drager LF, Genta PR, Marcondes BF, Lorenzi-Filho G",
+      "datePublished": "2009",
+      "isPartOf": { "@type": "Periodical", "name": "American Journal of Respiratory and Critical Care Medicine" },
+      "identifier": "doi:10.1164/rccm.200806-981OC"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Effects of oropharyngeal exercises on snoring: a randomized trial",
+      "author": "Ieto V, Kayamori F, Montes MI, et al.",
+      "datePublished": "2015",
+      "isPartOf": { "@type": "Periodical", "name": "Chest" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Didgeridoo playing as alternative treatment for obstructive sleep apnoea syndrome: randomised controlled trial",
+      "author": "Puhan MA, Suarez A, Lo Cascio C, Zahn A, Heitz M, Braendli O",
+      "datePublished": "2006",
+      "isPartOf": { "@type": "Periodical", "name": "BMJ" }
+    }
+  ],
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://normalpint.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "자료실", "item": "https://normalpint.github.io/learn/" },
+      { "@type": "ListItem", "position": 3, "name": "연구 근거", "item": "https://normalpint.github.io/learn/research/" }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="/"><span class="dot"></span>코고리스 <small>수면 호흡 자료실</small></a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/" aria-current="page">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+<nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span>›</span><a href="/learn/">자료실</a><span>›</span>연구 근거</nav>
+<main id="main" class="doc">
+
+<article>
+  <div class="doc-head">
+    <span class="kicker">04 · 연구 근거</span>
+    <h1>연구 근거 — 무엇이 어디까지 확인되었나</h1>
+    <p class="summary">
+      상기도 근육을 훈련한 임상 연구들의 <strong>설계·표본 수·결과 수치를 원문 그대로</strong> 정리했습니다.
+      유리한 숫자만 고르지 않았고, 각 근거가 어디에서 멈추는지도 같은 비중으로 적었습니다.
+    </p>
+    <p class="doc-meta">최종 검토 2026-08-29 · 인용 연구 6건 · 읽는 데 약 9분</p>
+  </div>
+
+  <section id="summary">
+    <h2>한 줄로 요약하면</h2>
+
+    <div class="answer">
+      <p>
+        상기도 주변 근육을 3개월 이상 훈련한 연구들에서 <strong>코골이 지표는 비교적 일관되게 감소</strong>했고
+        (코골이 빈도 36%↓, 총 강도 59%↓), 무호흡·저호흡 지수(AHI)도 감소했으나
+        <strong>감소 폭은 연구와 훈련 강도에 따라 6%에서 51%까지 크게 갈렸습니다.</strong>
+        모든 연구가 수십 명 규모이며, 어느 연구도 중증 수면무호흡에서 표준 치료를 대체할 수 있다고 주장하지 않았습니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="overview">
+    <h2>연구 6건 한눈에 보기</h2>
+
+    <figure class="table">
+      <figcaption>표 1. 상기도 근육 훈련 임상 연구 비교</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">연구</th>
+              <th scope="col">개입</th>
+              <th scope="col">대상 · 표본</th>
+              <th scope="col">기간</th>
+              <th scope="col">주요 결과</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Erturk 2024</strong><br><em>Sleep</em></td>
+              <td>EMST<br>고강도 60% MEP<br>vs 저강도 30% MEP</td>
+              <td>중등도 OSA 남성 31명<br>(16 / 15)</td>
+              <td>12주<br>주 7일 · 25회/일</td>
+              <td>AHI <strong class="num">−50.8%</strong>(고강도)<br>AHI <span class="num">−6.3%</span>(저강도)<br>MEP 양 군 모두 상승</td>
+            </tr>
+            <tr>
+              <td><strong>Hsu 2020</strong><br><em>JCSM</em><br>(메타분석)</td>
+              <td>호흡근 치료<br>(호기·흡기 근력 훈련)</td>
+              <td>경증~중증 OSA<br>성인·소아 394명<br>(9개 연구 통합)</td>
+              <td>연구별 상이</td>
+              <td>AHI <strong class="num">−7.6회/시간</strong><br>(95% CI −11.7~−3.5, P≤.001)<br>무호흡 지수 <span class="num">−4.2회/시간</span><br>ESS <span class="num">−2.5</span> · PSQI <span class="num">−1.3</span></td>
+            </tr>
+            <tr>
+              <td><strong>Camacho 2015</strong><br><em>Sleep</em><br>(메타분석)</td>
+              <td>근기능 요법<br>(myofunctional therapy)</td>
+              <td>성인 120명<br>(9개 연구 통합)</td>
+              <td>연구별 상이</td>
+              <td>AHI <span class="num">24.5 → 12.3</span> (약 50%↓)<br>최저 산소포화도 <span class="num">83.9% → 86.6%</span><br>ESS <span class="num">14.8 → 8.2</span></td>
+            </tr>
+            <tr>
+              <td><strong>Guimarães 2009</strong><br><em>AJRCCM</em></td>
+              <td>구인두 운동<br>vs 가짜 치료(sham)</td>
+              <td>중등도 OSAS 31명<br>(16 / 15)</td>
+              <td>3개월<br>1일 약 30분</td>
+              <td>AHI <strong class="num">−39%</strong><br>목둘레·코골이 증상·주간 졸림 감소</td>
+            </tr>
+            <tr>
+              <td><strong>Ieto 2015</strong><br><em>Chest</em></td>
+              <td>구강·혀 운동<br>vs 비강확장기+호흡운동</td>
+              <td>단순 코골이 또는<br>경증~중등도 OSA 39명</td>
+              <td>3개월</td>
+              <td>코골이 빈도 <strong class="num">−36%</strong><br>코골이 총 강도 <strong class="num">−59%</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Puhan 2006</strong><br><em>BMJ</em></td>
+              <td>디저리두 연주<br>vs 대기군</td>
+              <td>AHI 15–30 + 코골이<br>25명</td>
+              <td>4개월</td>
+              <td>AHI 차이 <span class="num">−6.2</span> (p=0.05)<br>주간 졸림 <span class="num">−3.0</span> (p=0.03)<br>배우자 수면 방해 <span class="num">−2.8</span> (p&lt;0.01)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      연구들은 개입 방식이 서로 다릅니다. EMST는 <strong>호기에 저항을 거는 부하 훈련</strong>이고,
+      구인두 운동은 <strong>혀·연구개·인두 측벽을 직접 움직이는 반복 동작</strong>이며,
+      디저리두는 <strong>순환 호흡을 요구하는 관악기 연주</strong>입니다.
+      공통점은 하나뿐 — 상기도 주변 근육에 반복적인 부하를 준다는 것입니다.
+    </p>
+  </section>
+
+  <section id="detail">
+    <h2>연구별 상세</h2>
+
+    <h3>Erturk 2024 — 강도가 결과를 갈랐다</h3>
+    <p>
+      중등도 폐쇄성 수면무호흡 남성 31명을 최대호기압(MEP)의 <strong>60% 부하군</strong>과 <strong>30% 부하군</strong>으로 나눠
+      12주간 주 7일, 하루 25회 호흡 훈련을 시행한 이중맹검 무작위 연구입니다.
+      두 군 모두 최대호기압은 유의하게 상승했지만, AHI는 고강도군에서 50.8% 감소한 반면 저강도군에서는 6.3% 감소에 그쳤습니다.
+      피츠버그 수면의 질 지수(PSQI)와 주간 졸림(ESS)은 양 군 모두 개선되었습니다.
+    </p>
+    <p>
+      이 연구의 함의는 명확합니다. <strong>같은 기구를 같은 횟수로 써도 저항의 세기가 낮으면 수면 지표는 거의 움직이지 않았습니다.</strong>
+      훈련 강도를 측정하고 유지하는 것이 프로토콜의 핵심 변수라는 뜻입니다.
+      다만 남성 31명, 중등도 한정이라는 표본의 제약은 그대로 남습니다.
+    </p>
+
+    <h3>Hsu 2020 — 호흡근 훈련만 따로 모은 메타분석</h3>
+    <p>
+      앞의 구인두 운동 연구들과 달리, <strong>호흡근 훈련(호기·흡기 근력 훈련)에 한정</strong>해 9개 연구 394명을 통합한 메타분석입니다.
+      대조군 대비 AHI가 시간당 7.6회 감소했고(95% CI −11.7 ~ −3.5, P ≤ .001),
+      무호흡 지수는 시간당 4.2회 감소(95% CI −7.7 ~ −0.8, P ≤ .016),
+      주간 졸림(ESS)은 24점 만점에 2.5점, 피츠버그 수면의 질 지수(PSQI)는 21점 만점에 1.3점 개선되었으며, 코골이 빈도도 유의하게 감소했습니다.
+    </p>
+
+    <div class="caution">
+      <b>이 논문에서 반드시 함께 읽어야 할 문장</b>
+      <p>
+        저자들은 <strong>포함된 9개 연구 전부를 "비뚤림 위험이 높음(high risk of bias)"으로 평가</strong>했고,
+        근거의 질을 <strong>낮음(low quality)</strong>으로 결론지었습니다.
+        그리고 호흡근 훈련을 폐쇄성 수면무호흡의 <strong>보조 관리(adjunct management)</strong>로 규정하며, 추가 연구가 필요하다고 명시했습니다.
+      </p>
+      <p>
+        이 문장들을 빼고 AHI −7.6이라는 숫자만 인용하면 근거가 실제보다 훨씬 강해 보입니다.
+        <strong>숫자와 그 숫자의 신뢰도는 같이 인용되어야 합니다.</strong>
+      </p>
+    </div>
+
+    <h3>Camacho 2015 — 흩어진 연구를 모은 결과</h3>
+    <p>
+      개별 연구가 아니라 <strong>9개 연구 성인 120명을 통합한 체계적 문헌고찰·메타분석</strong>입니다.
+      근기능 요법 전후 AHI가 평균 24.5 ± 14.3에서 12.3 ± 11.8로 감소했고(평균 차 −14.26),
+      최저 산소포화도는 83.9%에서 86.6%로, 수면다원검사상 코골이 시간 비율은 총 수면시간의 14.05%에서 3.87%로,
+      주간 졸림(ESS)은 14.8에서 8.2로 개선되었습니다. 소아 25명에서는 AHI가 약 62% 감소했습니다.
+    </p>
+    <p>
+      표준편차가 평균만큼 크다는 점(24.5 ± 14.3)에 주목할 필요가 있습니다.
+      <strong>평균은 절반으로 줄었지만, 개인차가 매우 컸다</strong>는 뜻입니다.
+    </p>
+
+    <h3>Guimarães 2009 — 가짜 치료와 비교한 무작위 연구</h3>
+    <p>
+      중등도 수면무호흡 환자 31명을 <strong>구인두 운동군(16명)</strong>과 <strong>가짜 치료군(15명, 심호흡·비강세척 등)</strong>으로 무작위 배정해
+      3개월간 하루 약 30분씩 시행했습니다. 운동군에서 AHI가 39% 감소했고, 최저 산소포화도가 개선되었으며,
+      목둘레·코골이 증상·주관적 졸림·수면의 질 점수가 모두 유의하게 좋아졌습니다.
+    </p>
+    <p>
+      이 연구의 강점은 <strong>대조군에 가짜 치료를 배정</strong>했다는 점입니다.
+      "무언가를 매일 한다"는 행위 자체의 효과를 어느 정도 걸러냈다는 의미가 있습니다.
+    </p>
+
+    <h3>Ieto 2015 — 코골이 소리를 직접 측정한 연구</h3>
+    <p>
+      단순 코골이 또는 경증~중등도 수면무호흡을 새로 진단받은 39명을 대상으로,
+      한쪽은 <strong>구강·혀 운동</strong>을, 다른 쪽은 <strong>비강확장기와 호흡 운동</strong>을 3개월간 시행했습니다.
+      운동군에서 코골이 빈도(snore index)가 36%, 코골이 총 강도(total snore index)가 59% 감소했으며, 대조군에서는 유의한 변화가 없었습니다.
+    </p>
+    <p>
+      위 연구들 중 <strong>"코골이 소리" 자체를 주 결과 지표로 삼은 유일한 연구</strong>라는 점에서 참고 가치가 큽니다.
+      AHI가 아니라 소음이 문제인 사람에게 가장 직접적으로 대응하는 근거입니다.
+    </p>
+
+    <h3>Puhan 2006 — 배우자의 평가가 가장 크게 움직였다</h3>
+    <p>
+      AHI 15–30이면서 코골이를 호소하는 25명을 <strong>디저리두 교습군</strong>과 <strong>대기군</strong>으로 무작위 배정해 4개월간 관찰했습니다.
+      주간 졸림(Epworth)이 대조군 대비 3.0점 개선(95% CI −5.7 ~ −0.3, p=0.03),
+      AHI는 6.2 감소(95% CI −12.3 ~ −0.1, p=0.05),
+      <strong>배우자가 평가한 수면 방해는 2.8점 감소(95% CI −4.7 ~ −0.9, p&lt;0.01)</strong>했습니다.
+      반면 수면의 질 자체(Pittsburgh)는 유의한 변화가 없었습니다(p=0.27).
+    </p>
+    <p>
+      통계적으로 가장 확실했던 결과가 <strong>본인의 수면의 질이 아니라 배우자가 느낀 방해의 감소</strong>였다는 점이 흥미롭습니다.
+      한편 AHI의 신뢰구간(−12.3 ~ −0.1)이 0에 거의 닿아 있어, 이 지표의 결과는 <strong>경계선상</strong>으로 읽어야 합니다.
+    </p>
+  </section>
+
+  <section id="limits">
+    <h2>이 근거들의 공통 한계</h2>
+
+    <div class="answer">
+      <p>위 연구들은 <strong>대부분 수십 명 규모</strong>이며, 개입 특성상 참가자를 완전히 눈가림하기 어렵고, 훈련을 중단한 뒤 효과가 얼마나 유지되는지를 확인한 연구는 없습니다. 이 분야를 소개할 때 반드시 함께 언급되어야 하는 조건들입니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 2. 근거의 한계와 그 의미</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">한계</th><th scope="col">의미</th></tr></thead>
+          <tbody>
+            <tr><td>표본이 작음 (개별 연구 25–39명, 메타분석도 120–394명)</td><td>결과가 우연이거나 특정 집단에 치우쳤을 가능성을 배제하기 어려움</td></tr>
+            <tr><td>참가자 눈가림이 어려움</td><td>"운동을 하고 있다"는 인식 자체가 주관적 지표(졸림·수면의 질)에 영향을 줄 수 있음</td></tr>
+            <tr><td>중증 수면무호흡 대상 근거 부족</td><td>대부분 경증~중등도 대상. 중증에는 적용 근거가 없음</td></tr>
+            <tr><td>장기 추적 부재</td><td>훈련 중단 후 효과 유지 기간이 확인되지 않음</td></tr>
+            <tr><td>프로토콜 이질성</td><td>강도·횟수·기간이 연구마다 달라 결과를 직접 비교하기 어려움</td></tr>
+            <tr><td>개인차가 큼</td><td>평균이 개선되어도 개인이 같은 결과를 얻는다는 보장은 없음</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+  </section>
+
+  <section id="can-say">
+    <h2>말할 수 있는 것과 말할 수 없는 것</h2>
+
+    <figure class="table">
+      <figcaption>표 3. 근거에 기반한 서술의 경계</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">구분</th><th scope="col">서술</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="good">말할 수 있음</td>
+              <td>
+                구인두 운동을 3개월 시행한 무작위 연구에서 코골이 빈도가 36%, 총 강도가 59% 감소했다 (Ieto 2015)<br>
+                EMST를 고강도(60% MEP)로 12주 시행한 군에서 AHI가 50.8% 감소했다 (Erturk 2024)<br>
+                호흡근 훈련 9개 연구 394명을 통합한 메타분석에서 대조군 대비 AHI가 시간당 7.6회 감소했다. 단, 포함된 연구 모두 비뚤림 위험이 높아 근거의 질은 낮음으로 평가되었다 (Hsu 2020)<br>
+                호흡근 훈련은 최대호기압 같은 근력 지표를 비교적 일관되게 향상시킨다
+              </td>
+            </tr>
+            <tr>
+              <td class="bad">말할 수 없음</td>
+              <td>
+                근육 훈련이 코골이를 치료한다<br>
+                근육 훈련이 수면무호흡을 개선한다 (개인에 대한 보장)<br>
+                근육 훈련으로 양압기를 대체할 수 있다<br>
+                특정 기구가 위 연구들의 결과를 재현한다
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <div class="caution">
+      <b>연구 결과와 개별 제품은 다른 층위입니다</b>
+      <p>
+        위 연구들은 <strong>운동 요법이라는 방법</strong>에 대한 것이지 특정 상품에 대한 것이 아닙니다.
+        어떤 기구가 연구에서 쓰인 것과 같은 방식(역치 부하, 강도 설정 가능)이라 하더라도,
+        그 기구가 동일한 임상 결과를 낸다는 근거가 되지는 않습니다.
+        이 자료실이 제품을 언급하지 않는 이유이기도 합니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="refs">
+    <h2>참고 문헌</h2>
+    <div class="note">
+      <b>인용 원칙</b>
+      <p>
+        아래 문헌은 모두 <strong>원문 초록을 직접 대조해 저자·연도·권호·수치를 확인</strong>한 것입니다.
+        2차 출처를 거쳐 옮긴 수치는 본문에서 그 사실을 표시했습니다.
+        수면 호흡 분야는 서지정보가 잘못 옮겨진 인용이 온라인에 적지 않게 유통되므로,
+        이 자료실을 인용하실 때도 <strong>DOI로 원문을 한 번 확인</strong>하시기를 권합니다.
+      </p>
+    </div>
+    <ol class="refs">
+      <li><cite>Erturk N, Celik A, Kahraman Yaman S, Yaman H, Unal F, Calik Kutukcu E.</cite> Expiratory muscle strength training reduces oxidative stress and systemic inflammation in men with obstructive sleep apnea syndrome: a double-blinded, randomized parallel trial. <em>Sleep.</em> 2024;47(12):zsae221. doi:10.1093/sleep/zsae221</li>
+      <li><cite>Hsu B, Emperumal CP, Grbach VX, Padilla M, Enciso R.</cite> Effects of respiratory muscle therapy on obstructive sleep apnea: a systematic review and meta-analysis. <em>J Clin Sleep Med.</em> 2020;16(5):785–801. doi:10.5664/jcsm.8318</li>
+      <li><cite>Camacho M, Certal V, Abdullatif J, Wei JM, Zaghi S, Capasso R.</cite> Myofunctional therapy to treat obstructive sleep apnea: a systematic review and meta-analysis. <em>Sleep.</em> 2015;38(5):669–675.</li>
+      <li><cite>Guimarães KC, Drager LF, Genta PR, Marcondes BF, Lorenzi-Filho G.</cite> Effects of oropharyngeal exercises on patients with moderate obstructive sleep apnea syndrome. <em>Am J Respir Crit Care Med.</em> 2009;179(10):962–966. doi:10.1164/rccm.200806-981OC</li>
+      <li><cite>Ieto V, Kayamori F, Montes MI, et al.</cite> Effects of oropharyngeal exercises on snoring: a randomized trial. <em>Chest.</em> 2015;148(3):683–691.</li>
+      <li><cite>Puhan MA, Suarez A, Lo Cascio C, Zahn A, Heitz M, Braendli O.</cite> Didgeridoo playing as alternative treatment for obstructive sleep apnoea syndrome: randomised controlled trial. <em>BMJ.</em> 2006;332(7536):266–270.</li>
+    </ol>
+  </section>
+
+  <p class="onward">
+    다음 문서 → <a href="/learn/compare/">대안별 작용 부위와 원리 비교</a>
+  </p>
+</article>
+
+</main>
+</div>
+
+<footer class="site-foot">
+  <div class="inner">
+    <p class="disclose">
+      본 자료실(<code>/learn/</code>)은 호기 저항 운동 기구를 제조·판매하는 <strong>코고리스</strong>가 운영합니다.
+      자료실의 모든 문서는 공개된 학술 문헌만을 근거로 하며 자사 제품을 언급하거나 그 효능을 주장하지 않습니다.
+      제품 정보는 <a href="/product/">제품 페이지</a>에서 물리적 규격 중심으로 별도 제공합니다.
+    </p>
+    <nav aria-label="푸터 메뉴">
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+    <p class="fine">
+      © 2026 코고리스. 본 사이트의 정보는 일반적인 건강 정보이며 의학적 진단·치료를 대신하지 않습니다.
+      증상이 지속되면 반드시 의료 전문가와 상담하십시오.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

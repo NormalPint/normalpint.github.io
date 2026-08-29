@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>호기근 강도 훈련(EMST)이란 — 역치 부하 원리와 강도 설정 | 코고리스</title>
+<meta name="description" content="호기근 강도 훈련(EMST)은 최대호기압(MEP)의 일정 비율로 설정한 역치 밸브를 날숨으로 밀어 여는 저항 훈련입니다. 역치 부하와 유량 저항의 차이, 강도 설정 기준, 표준 프로토콜, 금기 사항을 정리했습니다.">
+<link rel="canonical" href="https://normalpint.github.io/learn/emst/">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="코고리스">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="호기근 강도 훈련(EMST)이란 — 역치 부하 원리와 강도 설정">
+<meta property="og:description" content="EMST의 역치 부하 원리, MEP 대비 강도 설정, 표준 프로토콜과 금기 사항 정리.">
+<meta property="og:url" content="https://normalpint.github.io/learn/emst/">
+<style id="site-css">
+/* 코고리스 — 공용 스타일. 텍스트 우선, 시맨틱 구조 유지. */
+
+:root{
+  --paper:#F5F7F5;
+  --raised:#FFFFFF;
+  --ink:#17211D;
+  --ink-soft:#4C5A54;
+  --ink-faint:#83908A;
+  --line:#DCE3DF;
+  --line-soft:#EAEEEC;
+  --accent:#1F6F63;
+  --accent-ink:#0E4C43;
+  --accent-tint:#E4F1EC;
+  --accent-line:#BEDCD2;
+  --warn:#A3402F;
+  --warn-tint:#F8EAE6;
+  --shadow:0 1px 2px rgba(20,30,26,.05), 0 10px 30px -18px rgba(20,30,26,.18);
+  --maxw:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111917;
+    --raised:#18221F;
+    --ink:#E6EDE9;
+    --ink-soft:#A6B4AE;
+    --ink-faint:#6F7E78;
+    --line:#2A3A35;
+    --line-soft:#212E2A;
+    --accent:#5FC1AE;
+    --accent-ink:#8EDAC8;
+    --accent-tint:#16302A;
+    --accent-line:#2B5048;
+    --warn:#E48876;
+    --warn-tint:#39211C;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111917; --raised:#18221F; --ink:#E6EDE9; --ink-soft:#A6B4AE;
+  --ink-faint:#6F7E78; --line:#2A3A35; --line-soft:#212E2A;
+  --accent:#5FC1AE; --accent-ink:#8EDAC8; --accent-tint:#16302A; --accent-line:#2B5048;
+  --warn:#E48876; --warn-tint:#39211C;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.8; -webkit-font-smoothing:antialiased;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto}}
+
+h1,h2,h3,h4{font-weight:700; color:var(--ink); line-height:1.4; text-wrap:balance; margin:0}
+a{color:var(--accent-ink); text-underline-offset:3px}
+a:hover{color:var(--accent)}
+img{max-width:100%; height:auto}
+
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:8px; top:8px; z-index:99; background:var(--raised); padding:10px 14px; border-radius:8px; border:1px solid var(--line)}
+
+/* ---------- 헤더 ---------- */
+.site-head{border-bottom:1px solid var(--line); background:var(--raised)}
+.site-head .inner{
+  max-width:var(--maxw); margin:0 auto; padding:16px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.brand{display:flex; align-items:baseline; gap:9px; text-decoration:none; color:var(--ink); font-weight:700; font-size:18px}
+.brand .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; align-self:center}
+.brand small{font-weight:500; font-size:12.5px; color:var(--ink-faint); letter-spacing:.02em}
+.site-nav{display:flex; gap:4px; flex-wrap:wrap}
+.site-nav a{
+  text-decoration:none; color:var(--ink-soft); font-size:14.5px; font-weight:500;
+  padding:7px 11px; border-radius:8px;
+}
+.site-nav a:hover{background:var(--line-soft); color:var(--ink)}
+.site-nav a[aria-current="page"]{background:var(--accent-tint); color:var(--accent-ink)}
+
+/* ---------- 레이아웃 ---------- */
+.shell{max-width:var(--maxw); margin:0 auto; padding:0 24px 88px}
+.doc{max-width:760px; margin:0 auto}
+@media (max-width:640px){ .shell{padding:0 18px 64px} body{font-size:16px} }
+
+.crumbs{font-size:13.5px; color:var(--ink-faint); padding:20px 0 0; margin:0}
+.crumbs a{color:var(--ink-faint); text-decoration:none}
+.crumbs a:hover{color:var(--ink); text-decoration:underline}
+.crumbs span{margin:0 6px}
+
+.doc-head{padding:26px 0 30px; border-bottom:1px solid var(--line); margin-bottom:38px}
+.kicker{
+  display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.06em;
+  color:var(--accent-ink); background:var(--accent-tint); border:1px solid var(--accent-line);
+  padding:4px 10px; border-radius:999px; margin-bottom:16px;
+}
+.doc-head h1{font-size:clamp(26px,4.4vw,36px); margin-bottom:14px}
+.summary{font-size:17.5px; color:var(--ink-soft); margin:0}
+.summary strong{color:var(--ink); font-weight:600}
+.doc-meta{margin-top:18px; font-size:13.5px; color:var(--ink-faint)}
+
+section{margin-bottom:44px; scroll-margin-top:24px}
+h2{font-size:23px; margin:0 0 14px; padding-top:6px}
+h3{font-size:18px; margin:30px 0 10px}
+h4{font-size:16px; margin:22px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px; padding-left:22px}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+strong{font-weight:600}
+
+/* 두괄식 답변 블록 */
+.answer{
+  background:var(--accent-tint); border:1px solid var(--accent-line);
+  border-radius:12px; padding:16px 20px; margin:0 0 22px;
+}
+.answer p{margin:0; color:var(--ink)}
+.answer p + p{margin-top:10px}
+
+/* ---------- 다이어그램 ---------- */
+figure.diagram{margin:0 0 28px}
+figure.diagram svg{width:100%; height:auto; display:block}
+figure.diagram figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:10px}
+.legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:12px; font-size:13.5px; color:var(--ink-soft)}
+.legend span{display:flex; align-items:center; gap:7px}
+.legend i{width:22px; height:12px; border-radius:4px; flex:none; display:block}
+.legend i.solid{background:var(--accent-tint); border:1.5px solid var(--accent)}
+.legend i.dashed{background:transparent; border:1.5px dashed var(--ink-faint)}
+
+/* ---------- 표 ---------- */
+figure.table{margin:0 0 26px}
+figure.table figcaption{font-size:13.5px; color:var(--ink-faint); margin-bottom:8px}
+.scroll{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--raised)}
+table{border-collapse:collapse; width:100%; min-width:520px}
+th,td{text-align:left; padding:11px 16px; font-size:15px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{font-size:13px; font-weight:600; color:var(--ink-faint); background:var(--line-soft); letter-spacing:.02em}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+td.good{color:var(--accent-ink); font-weight:600}
+td.bad{color:var(--warn); font-weight:600}
+
+/* ---------- 콜아웃 ---------- */
+.note,.caution{
+  border-radius:12px; padding:16px 20px; margin:0 0 24px; font-size:15.5px;
+  border:1px solid var(--line); background:var(--line-soft);
+}
+.caution{background:var(--warn-tint); border-color:transparent}
+.note p,.caution p{margin:0; color:var(--ink-soft)}
+.note p+p,.caution p+p{margin-top:10px}
+.note b,.caution b{color:var(--ink); display:block; margin-bottom:5px; font-size:13px; letter-spacing:.05em}
+.caution b{color:var(--warn)}
+
+/* ---------- FAQ ---------- */
+.qa{border-top:1px solid var(--line); padding:24px 0}
+.qa:last-of-type{border-bottom:1px solid var(--line)}
+.qa h3{margin:0 0 10px; font-size:18px}
+.qa p:last-child{margin-bottom:0}
+
+/* ---------- 카드 ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:0 0 30px}
+.card{
+  display:block; text-decoration:none; color:inherit; background:var(--raised);
+  border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:var(--shadow);
+}
+.card:hover{border-color:var(--accent-line)}
+.card h3{margin:0 0 7px; font-size:17px; color:var(--ink)}
+.card p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.65}
+.card .tag{font-size:12px; color:var(--ink-faint); letter-spacing:.05em; display:block; margin-bottom:9px}
+
+/* ---------- 참고문헌 ---------- */
+ol.refs{padding-left:20px; font-size:14.5px; color:var(--ink-soft); line-height:1.7}
+ol.refs li{margin-bottom:12px}
+ol.refs cite{font-style:normal; color:var(--ink)}
+
+/* ---------- 다음 단계 링크 ---------- */
+.onward{
+  border-top:1px solid var(--line); margin-top:8px; padding-top:22px;
+  font-size:15.5px; color:var(--ink-soft);
+}
+.onward a{font-weight:600}
+
+/* ---------- 제품 사진 ---------- */
+figure.shot{margin:0 0 26px}
+figure.shot img, figure.shot video{
+  width:100%; height:auto; display:block; border-radius:12px;
+  background:var(--line-soft); border:1px solid var(--line);
+}
+figure.shot figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:9px}
+.shot-pair{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 26px}
+@media (max-width:560px){ .shot-pair{grid-template-columns:1fr} }
+.shot-pair figure{margin:0}
+.shot-pair figcaption{text-align:center}
+figure.shot.narrow{max-width:420px}
+
+/* ---------- 제품 페이지 ---------- */
+.spec dt{font-size:13px; color:var(--ink-faint); letter-spacing:.04em; margin-top:14px}
+.spec dd{margin:2px 0 0; font-size:16px}
+.todo{
+  background:var(--warn-tint); color:var(--warn); border:1px dashed var(--warn);
+  border-radius:6px; padding:1px 7px; font-size:13.5px; font-weight:600; white-space:nowrap;
+}
+.buy{
+  display:inline-block; background:var(--accent); color:#FFFFFF; text-decoration:none;
+  font-weight:600; padding:13px 26px; border-radius:10px; font-size:16px; margin:6px 0 0;
+}
+.buy:hover{background:var(--accent-ink); color:#FFFFFF}
+
+/* ---------- 푸터 ---------- */
+.site-foot{border-top:1px solid var(--line); background:var(--raised); margin-top:40px}
+.site-foot .inner{max-width:var(--maxw); margin:0 auto; padding:34px 24px 44px; font-size:14px; color:var(--ink-soft)}
+.site-foot .disclose{
+  border-left:3px solid var(--accent-line); padding-left:14px; margin:0 0 22px; max-width:620px;
+}
+.site-foot nav{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:16px}
+.site-foot nav a{color:var(--ink-soft); text-decoration:none}
+.site-foot nav a:hover{color:var(--ink); text-decoration:underline}
+.site-foot .fine{font-size:13px; color:var(--ink-faint); margin:0}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://normalpint.github.io/learn/emst/#article",
+  "headline": "호기근 강도 훈련(EMST)이란 — 역치 부하 원리와 강도 설정",
+  "description": "호기근 강도 훈련(EMST)은 최대호기압(MEP)의 일정 비율로 설정한 역치 밸브를 날숨으로 밀어 여는 저항 훈련입니다.",
+  "inLanguage": "ko-KR",
+  "datePublished": "2026-08-29",
+  "dateModified": "2026-08-29",
+  "url": "https://normalpint.github.io/learn/emst/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://normalpint.github.io/learn/emst/" },
+  "isPartOf": { "@id": "https://normalpint.github.io/#website" },
+  "publisher": { "@id": "https://normalpint.github.io/#organization" },
+  "about": [
+    { "@type": "Thing", "name": "호기근 강도 훈련", "alternateName": "Expiratory Muscle Strength Training (EMST)" },
+    { "@type": "Thing", "name": "최대호기압", "alternateName": "Maximum Expiratory Pressure (MEP)" },
+    { "@type": "Thing", "name": "호기 저항" }
+  ],
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://normalpint.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "자료실", "item": "https://normalpint.github.io/learn/" },
+      { "@type": "ListItem", "position": 3, "name": "호기근 강도 훈련(EMST)이란", "item": "https://normalpint.github.io/learn/emst/" }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="/"><span class="dot"></span>코고리스 <small>수면 호흡 자료실</small></a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+<nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span>›</span><a href="/learn/">자료실</a><span>›</span>호기근 강도 훈련(EMST)이란</nav>
+<main id="main" class="doc">
+
+<article>
+  <div class="doc-head">
+    <span class="kicker">03 · 훈련 방법론</span>
+    <h1>호기근 강도 훈련(EMST)이란</h1>
+    <p class="summary">
+      정해진 압력 이상으로 불어야만 열리는 밸브에 대고 날숨을 내보내는 저항 훈련입니다.
+      핵심 변수는 하나뿐입니다 — <strong>그 밸브가 열리는 압력을 몇으로 설정했는가.</strong>
+    </p>
+    <p class="doc-meta">최종 검토 2026-08-29 · 읽는 데 약 7분</p>
+  </div>
+
+  <section id="definition">
+    <h2>EMST는 무엇인가요?</h2>
+
+    <div class="answer">
+      <p><strong>호기근 강도 훈련(Expiratory Muscle Strength Training, EMST)</strong>은 날숨 방향에 일정한 저항을 걸어 호기에 관여하는 근육을 부하 훈련하는 방법입니다. 스프링으로 눌린 밸브를 설정 압력 이상으로 불어야만 공기가 통과하므로, 매 호흡이 <strong>역기를 드는 것과 같은 1회 반복 운동</strong>이 됩니다.</p>
+    </div>
+
+    <p>
+      원래는 재활 영역 — 파킨슨병·다발성 경화증 환자의 기침 능력과 삼킴 기능 개선, 음성 재활, 호흡 지구력 향상 — 에서
+      확립된 방법입니다. 수면 호흡 영역에서 주목받게 된 것은 비교적 최근이며,
+      상기도 주변 근육이 함께 동원된다는 점이 근거로 제시됩니다.
+    </p>
+  </section>
+
+  <section id="threshold">
+    <h2>"저항"에도 종류가 있나요?</h2>
+
+    <div class="answer">
+      <p>있습니다. 그리고 이 구분이 중요합니다. <strong>역치 부하(threshold load)</strong>는 설정 압력에 도달하기 전까지 밸브가 아예 열리지 않아, 유량과 무관하게 일정한 힘을 요구합니다. 반면 <strong>유량 저항(flow-resistive)</strong>은 좁은 구멍으로 부는 방식이라 천천히 불면 부하가 사라집니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 1. 호흡 저항 훈련 방식의 비교</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">방식</th><th scope="col">작동 원리</th><th scope="col">부하의 일관성</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>역치 부하</strong><br>(threshold)</td>
+              <td>스프링 밸브가 설정 압력 이상에서만 개방</td>
+              <td class="good">호흡 속도와 무관하게 일정 — 훈련량을 정량화할 수 있음</td>
+            </tr>
+            <tr>
+              <td>유량 저항<br>(flow-resistive)</td>
+              <td>좁은 구멍을 통과시키며 저항 발생</td>
+              <td class="bad">천천히 불면 부하가 거의 사라짐 — 자기도 모르게 강도가 낮아짐</td>
+            </tr>
+            <tr>
+              <td>자발적 과호흡<br>(voluntary hyperpnea)</td>
+              <td>기구 없이 빠르고 깊게 호흡</td>
+              <td>지구력 위주. 최대 근력 부하로는 부족</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      EMST 연구들이 채택한 것은 <strong>역치 부하 방식</strong>입니다.
+      "얼마나 세게 훈련했는가"를 압력 단위(cmH₂O)로 기록할 수 있어야 프로토콜이 재현 가능하고, 결과를 비교할 수 있기 때문입니다.
+    </p>
+  </section>
+
+  <section id="intensity">
+    <h2>강도는 어떻게 정하나요?</h2>
+
+    <div class="answer">
+      <p>개인의 <strong>최대호기압(MEP, Maximum Expiratory Pressure)</strong>을 먼저 측정한 뒤, 그 값의 일정 비율로 밸브 압력을 설정합니다. 재활 문헌에서 널리 쓰인 기준은 <strong>MEP의 75%</strong>이며, 수면 호흡 영역의 최근 연구는 <strong>60%</strong>를 고강도로, <strong>30%</strong>를 저강도로 두고 둘을 비교했습니다.</p>
+    </div>
+
+    <p>
+      MEP를 어떤 절차로 측정하는지, 나이·성별에 따른 정상 범위는 얼마인지,
+      그리고 "MEP의 60%"가 실제로 몇 cmH₂O인지는 <a href="/learn/mep/">최대호기압(MEP) 문서</a>에 따로 정리했습니다.
+    </p>
+
+    <p>그 비교 결과가 이 문서에서 가장 중요한 수치입니다.</p>
+
+    <figure class="table">
+      <figcaption>표 2. EMST 강도에 따른 결과 차이 (Erturk et al., <em>Sleep</em>, 2024)</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">항목</th><th scope="col">고강도군</th><th scope="col">저강도군</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>설정 강도</td><td class="num">MEP의 60%</td><td class="num">MEP의 30%</td></tr>
+            <tr><td>대상</td><td colspan="2">중등도 폐쇄성 수면무호흡 남성 31명 (고강도 16명 / 저강도 15명)</td></tr>
+            <tr><td>기간</td><td colspan="2">12주 · 주 7일 · 1일 1회 · 25회 호흡</td></tr>
+            <tr><td><strong>AHI 감소</strong></td><td class="num good"><strong>50.8%</strong></td><td class="num bad">6.3%</td></tr>
+            <tr><td>최대호기압(MEP)</td><td colspan="2">양 군 모두 유의하게 상승 (효과크기 1.75 / 1.24)</td></tr>
+            <tr><td>수면의 질(PSQI)</td><td colspan="2">양 군 모두 유의하게 개선</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <div class="note">
+      <b>이 표를 읽는 방법</b>
+      <p>
+        주목할 점은 <strong>근력은 양쪽 다 늘었는데 AHI는 한쪽만 크게 줄었다</strong>는 것입니다.
+        저강도 훈련으로도 호기 근력 자체는 향상되었지만, 수면 중 호흡 지표까지 움직인 것은 고강도군뿐이었습니다.
+        같은 기구, 같은 횟수, 같은 기간이라도 <strong>저항의 세기가 결과를 갈랐다</strong>는 뜻이며,
+        이것이 저항값을 측정하고 조절할 수 있어야 하는 이유입니다.
+      </p>
+    </div>
+
+    <div class="caution">
+      <b>표본이 작습니다</b>
+      <p>
+        31명 규모의 단일 연구이며, 대상이 남성 중등도 환자로 한정되어 있습니다.
+        여성·경증·중증 집단에 그대로 적용되는지는 확인되지 않았습니다. 큰 수치일수록 표본 크기와 함께 읽어야 합니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="protocol">
+    <h2>일반적인 프로토콜은 어떻게 되나요?</h2>
+
+    <figure class="table">
+      <figcaption>표 3. 문헌에 보고된 대표 프로토콜 두 가지</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">구분</th><th scope="col">재활 영역 표준형</th><th scope="col">수면 호흡 연구형</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>강도</td><td>MEP의 75%</td><td>MEP의 60%</td></tr>
+            <tr><td>1일 횟수</td><td>5회 × 5세트 = 25회</td><td>25회</td></tr>
+            <tr><td>빈도</td><td>주 5일</td><td>주 7일</td></tr>
+            <tr><td>기간</td><td>4주</td><td>12주</td></tr>
+            <tr><td>강도 조정</td><td>주 단위로 MEP 재측정 후 상향</td><td>연구 기간 내 고정</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      공통점은 셋입니다. <strong>① 하루 25회 내외</strong>의 적은 횟수, <strong>② 개인 최대치의 절반 이상</strong>이라는 높은 강도,
+      <strong>③ 매일 또는 주 5일 이상</strong>의 높은 빈도. 총 운동 시간은 하루 몇 분에 불과하지만, 부하가 낮으면 의미가 옅어집니다.
+      근력 훈련 일반의 원리와 다르지 않습니다.
+    </p>
+  </section>
+
+  <section id="conditions">
+    <h2>효과가 보고된 훈련들의 공통 조건은 무엇인가요?</h2>
+
+    <div class="answer">
+      <p>
+        연구에서 결과가 나온 프로토콜들을 겹쳐 보면 네 가지가 공통됩니다.
+        <strong>① 최대호기압의 60~75% 수준의 부하, ② 근력 향상에 맞춰 부하를 올리는 점증, ③ 마우스피스를 문 일정한 자세, ④ 최소 4~8주 이상의 반복.</strong>
+        네 가지 중 하나라도 빠지면 같은 동작이라도 결과가 달라집니다.
+      </p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 4. 문헌에서 반복적으로 확인되는 네 가지 조건</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">조건</th><th scope="col">내용</th><th scope="col">근거</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 부하의 크기</strong></td>
+              <td>개인 최대호기압(MEP)의 60~75%</td>
+              <td>60%군 AHI 50.8%↓ vs 30%군 6.3%↓ (Erturk 2024). 재활 문헌 표준은 75%</td>
+            </tr>
+            <tr>
+              <td><strong>② 점증(과부하)</strong></td>
+              <td>훈련으로 MEP가 오르면 설정 부하도 함께 올림</td>
+              <td>재활 표준 프로토콜은 주 단위로 MEP를 재측정해 상향</td>
+            </tr>
+            <tr>
+              <td><strong>③ 자세와 밀폐</strong></td>
+              <td>마우스피스를 입술로 감싸 공기가 새지 않는 상태 유지</td>
+              <td>연구에 쓰인 기구는 모두 마우스피스형. 누출이 있으면 설정 부하가 실제로 걸리지 않음</td>
+            </tr>
+            <tr>
+              <td><strong>④ 기간</strong></td>
+              <td>최소 4~8주, 연구에 따라 12주</td>
+              <td>재활 표준 4주 · 수면 호흡 연구 12주. 근육 적응에 필요한 시간</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      ①과 ②는 근력 훈련 일반의 <strong>점진적 과부하(progressive overload)</strong> 원리와 같습니다.
+      부하가 없으면 적응이 일어나지 않고, 부하가 고정되면 어느 시점부터 적응이 멈춥니다.
+      상기도 확장근이라고 해서 이 원리에서 벗어나지 않습니다.
+    </p>
+
+    <h3>그렇다면 혀 운동이나 풍선 불기는 어떤가요?</h3>
+
+    <div class="answer">
+      <p>
+        <strong>"효과가 없다"가 아니라 "다른 축의 방법"입니다.</strong>
+        혀·구개를 직접 움직이는 구인두 운동은 저항 부하가 없지만 무작위 대조 연구에서 AHI 39% 감소가 보고되었습니다(Guimarães 2009).
+        다만 이런 방법들은 <strong>부하를 숫자로 설정하고 점차 올리는 것이 불가능</strong>합니다. 이것이 저항 기구와 갈리는 지점입니다.
+      </p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 5. 방식별 부하 특성 비교 — 효과의 유무가 아니라 부하를 정량화·점증할 수 있는지의 축</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">방식</th>
+              <th scope="col">부하</th>
+              <th scope="col">정량화·점증</th>
+              <th scope="col">직접 근거</th>
+              <th scope="col">주 자극 부위</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>구인두 운동<br>(혀·연구개 반복 운동)</td>
+              <td>없음(자체 근력)</td>
+              <td class="bad">불가</td>
+              <td class="good">무작위 연구 다수</td>
+              <td>혀·연구개·인두 측벽</td>
+            </tr>
+            <tr>
+              <td>발성 훈련</td>
+              <td>없음</td>
+              <td class="bad">불가</td>
+              <td>제한적</td>
+              <td>구강·후두</td>
+            </tr>
+            <tr>
+              <td>풍선 불기</td>
+              <td>있음(비정형)</td>
+              <td class="bad">불가 — 풍선 크기·상태에 좌우</td>
+              <td>확인되지 않음</td>
+              <td class="bad">폐·횡격막 쪽 비중이 큼</td>
+            </tr>
+            <tr>
+              <td>관악기 연주</td>
+              <td class="good">있음</td>
+              <td>부분적(악기에 종속)</td>
+              <td class="good">무작위 연구 1건(Puhan 2006)</td>
+              <td>상기도 주변 근육</td>
+            </tr>
+            <tr>
+              <td>역치 부하 기구<br>(EMST)</td>
+              <td class="good">있음(압력 단위)</td>
+              <td class="good">가능</td>
+              <td class="good">무작위 연구 · 메타분석</td>
+              <td>호기근 + 설하 근육군</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      풍선 불기는 특히 구분이 필요합니다. 풍선을 부는 동작은 폐활량과 횡격막·복근 쪽으로 부하가 실리는 비중이 커서,
+      <strong>상기도 확장근을 겨냥한 훈련과는 자극 부위가 다릅니다.</strong>
+      호흡량이 커지는 것과 잠든 뒤 기도가 유지되는 것은 별개의 문제입니다.
+    </p>
+  </section>
+
+  <section id="why-expiratory">
+    <h2>기도는 들이쉴 때 막히는데, 왜 내쉬는 훈련을 하나요?</h2>
+
+    <div class="answer">
+      <p>정당한 질문입니다. 연구자들이 제시하는 설명은 <strong>EMST 동작이 호기근만 쓰는 것이 아니라는 것</strong>입니다. 마우스피스를 물고 압력을 만들어내는 동안 <strong>턱밑(설하) 근육군 — 특히 설골상근과 이설근 — 의 신경근 활성이 함께 연장</strong>되며, 이 상기도 근육 활성의 증가가 무호흡·저호흡 사건의 감소에 기여한다는 것이 Erturk 등이 논문에서 밝힌 기전입니다.</p>
+    </div>
+
+    <p>
+      즉 훈련 자극이 복부와 흉곽의 호기근에만 국한되지 않고,
+      <a href="/learn/genioglossus/">상기도 확장근 문서</a>에서 정리한 설골 주변 근육군까지 걸쳐 있다는 설명입니다.
+      초음파로 <strong>이설골근(Geniohyoid)의 변화를 확인한 연구</strong>와, 삼킴·호기 훈련 중 설하 근육의 근전도 활성을 측정한 연구가 이를 뒷받침합니다.
+    </p>
+
+    <div class="caution">
+      <b>다만 기전 설명과 인과 증명은 다릅니다</b>
+      <p>
+        위 내용은 <strong>논문의 고찰(discussion)에서 저자들이 제시한 작용 기전</strong>이며, 개입과 결과 사이의 인과가 직접 측정된 것은 아닙니다.
+        "근육 활성이 늘었다"와 "그래서 수면 중 기도가 유지되었다" 사이에는 아직 확인되지 않은 구간이 남아 있습니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="dose-response">
+    <h2>강도별로 보고된 수치를 모으면 어떻게 되나요?</h2>
+
+    <div class="answer">
+      <p>같은 EMST라도 <strong>강도와 기간에 따라 보고된 AHI 감소 폭이 6%에서 51%까지</strong> 벌어집니다. 아래는 Erturk 등이 자신들의 논문 고찰에서 직접 나열한 비교입니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 6. 강도·기간별 AHI 감소 폭 (Erturk 2024 고찰에 정리된 값)</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">연구 · 대상</th><th scope="col">조건</th><th scope="col">AHI 감소</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Erturk 2024 · 중등도 OSAS</td><td>고강도(60% MEP) 12주</td><td class="num good">50.8%</td></tr>
+            <tr><td>Erturk 2024 · 중등도 OSAS</td><td>저강도(30% MEP) 12주</td><td class="num bad">6.3%</td></tr>
+            <tr><td>저자들의 이전 연구 · 중증 OSAS</td><td>고강도</td><td class="num">34.57%</td></tr>
+            <tr><td>저자들의 이전 연구 · 중증 OSAS</td><td>저강도</td><td class="num">20.20%</td></tr>
+            <tr><td>Kuo 등 · 경증~중등도 OSAS</td><td>고강도 5주</td><td class="num">40%</td></tr>
+            <tr><td>Kuo 등 · 중등도 하위분석</td><td>75% MEP 부하</td><td class="num">26%</td></tr>
+            <tr><td>구인두 운동 연구 · 중등도~중증</td><td>3개월</td><td class="num">39%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <div class="note">
+      <b>이 표를 읽을 때의 주의</b>
+      <p>
+        맨 위 두 행을 제외한 나머지는 <strong>Erturk 등의 논문이 인용한 2차 출처</strong>이며, 이 자료실이 원문을 직접 대조한 값이 아닙니다.
+        대상자의 중증도·훈련 기간·측정 방법이 모두 달라 <strong>행끼리 직접 비교하기 어렵습니다.</strong>
+        표의 용도는 "강도가 높을수록 감소 폭이 큰 경향"을 보는 것이지, 특정 숫자를 기대치로 삼는 것이 아닙니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="cautions">
+    <h2>주의해야 할 상황</h2>
+
+    <div class="caution">
+      <b>다음에 해당하면 시작 전 전문가와 상담하십시오</b>
+      <p>
+        고혈압이 조절되지 않는 경우, 최근 흉부·복부 수술을 받은 경우, 기흉 병력, 고막 천공이나 최근 중이 수술,
+        조절되지 않는 심혈관 질환, 임신 중인 경우. 강한 호기는 순간적으로 흉강내압과 두개내압을 올리므로
+        위 상황에서는 부하 훈련이 적절하지 않을 수 있습니다.
+      </p>
+      <p>
+        또한 어지럼·두통·흉통이 나타나면 즉시 중단하십시오.
+        <strong>수면무호흡이 의심되는 상태에서 훈련을 진단이나 치료의 대체로 삼아서는 안 됩니다.</strong>
+      </p>
+    </div>
+  </section>
+
+  <section id="refs">
+    <h2>참고 문헌</h2>
+    <ol class="refs">
+      <li><cite>Erturk N, Celik A, Yaman SK, Yaman H, Unal F, Calik Kutukcu E.</cite> Expiratory muscle strength training reduces oxidative stress and systemic inflammation in men with obstructive sleep apnea syndrome: a double-blinded, randomized parallel trial. <em>Sleep.</em> 2024;47(12):zsae221. doi:10.1093/sleep/zsae221</li>
+      <li><cite>Wheeler-Hegland KM, Rosenbek JC, Sapienza CM.</cite> Submental sEMG and hyoid movement during Mendelsohn maneuver, effortful swallow, and expiratory muscle strength training. <em>J Speech Lang Hear Res.</em> 2008;51(5):1072–1087.</li>
+      <li><cite>Using ultrasound to document the effects of expiratory muscle strength training (EMST) on the geniohyoid muscle.</cite> <em>Dysphagia.</em> 2021. PMID: 34132896</li>
+      <li><cite>Hsu B, Emperumal CP, Grbach VX, Padilla M, Enciso R.</cite> Effects of respiratory muscle therapy on obstructive sleep apnea: a systematic review and meta-analysis. <em>J Clin Sleep Med.</em> 2020;16(5):785–801. doi:10.5664/jcsm.8318</li>
+      <li><cite>Guimarães KC, Drager LF, Genta PR, Marcondes BF, Lorenzi-Filho G.</cite> Effects of oropharyngeal exercises on patients with moderate obstructive sleep apnea syndrome. <em>Am J Respir Crit Care Med.</em> 2009;179(10):962–966.</li>
+      <li><cite>Puhan MA, Suarez A, Lo Cascio C, Zahn A, Heitz M, Braendli O.</cite> Didgeridoo playing as alternative treatment for obstructive sleep apnoea syndrome: randomised controlled trial. <em>BMJ.</em> 2006;332(7536):266–270.</li>
+      <li><cite>Camacho M, Certal V, Abdullatif J, et al.</cite> Myofunctional therapy to treat obstructive sleep apnea: a systematic review and meta-analysis. <em>Sleep.</em> 2015;38(5):669–675.</li>
+    </ol>
+  </section>
+
+  <p class="onward">
+    다음 문서 → <a href="/learn/mep/">최대호기압(MEP)이란 — 정의, 측정 방법, 기준값</a>
+  </p>
+
+  <p class="doc-meta" style="margin-top:20px">
+    고지 — 이 자료실을 운영하는 코고리스는 호기 저항 운동 기구를 판매하고 있습니다.
+    제품의 물리적 규격과 사용 방법은 <a href="/product/">제품 페이지</a>에서 확인하실 수 있으며,
+    이 문서에 인용된 연구들은 특정 제품이 아닌 운동 요법 일반에 관한 것입니다.
+  </p>
+</article>
+
+</main>
+</div>
+
+<footer class="site-foot">
+  <div class="inner">
+    <p class="disclose">
+      본 자료실(<code>/learn/</code>)은 호기 저항 운동 기구를 제조·판매하는 <strong>코고리스</strong>가 운영합니다.
+      자료실의 모든 문서는 공개된 학술 문헌만을 근거로 하며 자사 제품을 언급하거나 그 효능을 주장하지 않습니다.
+      제품 정보는 <a href="/product/">제품 페이지</a>에서 물리적 규격 중심으로 별도 제공합니다.
+    </p>
+    <nav aria-label="푸터 메뉴">
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+    <p class="fine">
+      © 2026 코고리스. 본 사이트의 정보는 일반적인 건강 정보이며 의학적 진단·치료를 대신하지 않습니다.
+      증상이 지속되면 반드시 의료 전문가와 상담하십시오.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

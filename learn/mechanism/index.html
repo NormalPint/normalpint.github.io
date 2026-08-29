@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수면 중 상기도는 왜 좁아지는가 — 코골이 발생의 생리학적 단계 | 코고리스</title>
+<meta name="description" content="수면 중 근긴장도 저하로 상기도 확장근의 힘이 약해지면 인두가 좁아지고, 좁은 통로를 지나는 기류가 연조직을 진동시켜 코골이 소음이 발생합니다. 발생 단계, 진동 부위, 악화 요인, 수면무호흡과의 경계를 정리했습니다.">
+<link rel="canonical" href="https://normalpint.github.io/learn/mechanism/">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="코고리스">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="수면 중 상기도는 왜 좁아지는가 — 코골이 발생의 생리학적 단계">
+<meta property="og:description" content="근긴장도 저하 → 인두 협착 → 기류 가속 → 연조직 진동. 코골이 발생의 4단계와 진동 부위별 특징을 정리했습니다.">
+<meta property="og:url" content="https://normalpint.github.io/learn/mechanism/">
+<style id="site-css">
+/* 코고리스 — 공용 스타일. 텍스트 우선, 시맨틱 구조 유지. */
+
+:root{
+  --paper:#F5F7F5;
+  --raised:#FFFFFF;
+  --ink:#17211D;
+  --ink-soft:#4C5A54;
+  --ink-faint:#83908A;
+  --line:#DCE3DF;
+  --line-soft:#EAEEEC;
+  --accent:#1F6F63;
+  --accent-ink:#0E4C43;
+  --accent-tint:#E4F1EC;
+  --accent-line:#BEDCD2;
+  --warn:#A3402F;
+  --warn-tint:#F8EAE6;
+  --shadow:0 1px 2px rgba(20,30,26,.05), 0 10px 30px -18px rgba(20,30,26,.18);
+  --maxw:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111917;
+    --raised:#18221F;
+    --ink:#E6EDE9;
+    --ink-soft:#A6B4AE;
+    --ink-faint:#6F7E78;
+    --line:#2A3A35;
+    --line-soft:#212E2A;
+    --accent:#5FC1AE;
+    --accent-ink:#8EDAC8;
+    --accent-tint:#16302A;
+    --accent-line:#2B5048;
+    --warn:#E48876;
+    --warn-tint:#39211C;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111917; --raised:#18221F; --ink:#E6EDE9; --ink-soft:#A6B4AE;
+  --ink-faint:#6F7E78; --line:#2A3A35; --line-soft:#212E2A;
+  --accent:#5FC1AE; --accent-ink:#8EDAC8; --accent-tint:#16302A; --accent-line:#2B5048;
+  --warn:#E48876; --warn-tint:#39211C;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.8; -webkit-font-smoothing:antialiased;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto}}
+
+h1,h2,h3,h4{font-weight:700; color:var(--ink); line-height:1.4; text-wrap:balance; margin:0}
+a{color:var(--accent-ink); text-underline-offset:3px}
+a:hover{color:var(--accent)}
+img{max-width:100%; height:auto}
+
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:8px; top:8px; z-index:99; background:var(--raised); padding:10px 14px; border-radius:8px; border:1px solid var(--line)}
+
+/* ---------- 헤더 ---------- */
+.site-head{border-bottom:1px solid var(--line); background:var(--raised)}
+.site-head .inner{
+  max-width:var(--maxw); margin:0 auto; padding:16px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.brand{display:flex; align-items:baseline; gap:9px; text-decoration:none; color:var(--ink); font-weight:700; font-size:18px}
+.brand .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; align-self:center}
+.brand small{font-weight:500; font-size:12.5px; color:var(--ink-faint); letter-spacing:.02em}
+.site-nav{display:flex; gap:4px; flex-wrap:wrap}
+.site-nav a{
+  text-decoration:none; color:var(--ink-soft); font-size:14.5px; font-weight:500;
+  padding:7px 11px; border-radius:8px;
+}
+.site-nav a:hover{background:var(--line-soft); color:var(--ink)}
+.site-nav a[aria-current="page"]{background:var(--accent-tint); color:var(--accent-ink)}
+
+/* ---------- 레이아웃 ---------- */
+.shell{max-width:var(--maxw); margin:0 auto; padding:0 24px 88px}
+.doc{max-width:760px; margin:0 auto}
+@media (max-width:640px){ .shell{padding:0 18px 64px} body{font-size:16px} }
+
+.crumbs{font-size:13.5px; color:var(--ink-faint); padding:20px 0 0; margin:0}
+.crumbs a{color:var(--ink-faint); text-decoration:none}
+.crumbs a:hover{color:var(--ink); text-decoration:underline}
+.crumbs span{margin:0 6px}
+
+.doc-head{padding:26px 0 30px; border-bottom:1px solid var(--line); margin-bottom:38px}
+.kicker{
+  display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.06em;
+  color:var(--accent-ink); background:var(--accent-tint); border:1px solid var(--accent-line);
+  padding:4px 10px; border-radius:999px; margin-bottom:16px;
+}
+.doc-head h1{font-size:clamp(26px,4.4vw,36px); margin-bottom:14px}
+.summary{font-size:17.5px; color:var(--ink-soft); margin:0}
+.summary strong{color:var(--ink); font-weight:600}
+.doc-meta{margin-top:18px; font-size:13.5px; color:var(--ink-faint)}
+
+section{margin-bottom:44px; scroll-margin-top:24px}
+h2{font-size:23px; margin:0 0 14px; padding-top:6px}
+h3{font-size:18px; margin:30px 0 10px}
+h4{font-size:16px; margin:22px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px; padding-left:22px}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+strong{font-weight:600}
+
+/* 두괄식 답변 블록 */
+.answer{
+  background:var(--accent-tint); border:1px solid var(--accent-line);
+  border-radius:12px; padding:16px 20px; margin:0 0 22px;
+}
+.answer p{margin:0; color:var(--ink)}
+.answer p + p{margin-top:10px}
+
+/* ---------- 다이어그램 ---------- */
+figure.diagram{margin:0 0 28px}
+figure.diagram svg{width:100%; height:auto; display:block}
+figure.diagram figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:10px}
+.legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:12px; font-size:13.5px; color:var(--ink-soft)}
+.legend span{display:flex; align-items:center; gap:7px}
+.legend i{width:22px; height:12px; border-radius:4px; flex:none; display:block}
+.legend i.solid{background:var(--accent-tint); border:1.5px solid var(--accent)}
+.legend i.dashed{background:transparent; border:1.5px dashed var(--ink-faint)}
+
+/* ---------- 표 ---------- */
+figure.table{margin:0 0 26px}
+figure.table figcaption{font-size:13.5px; color:var(--ink-faint); margin-bottom:8px}
+.scroll{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--raised)}
+table{border-collapse:collapse; width:100%; min-width:520px}
+th,td{text-align:left; padding:11px 16px; font-size:15px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{font-size:13px; font-weight:600; color:var(--ink-faint); background:var(--line-soft); letter-spacing:.02em}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+td.good{color:var(--accent-ink); font-weight:600}
+td.bad{color:var(--warn); font-weight:600}
+
+/* ---------- 콜아웃 ---------- */
+.note,.caution{
+  border-radius:12px; padding:16px 20px; margin:0 0 24px; font-size:15.5px;
+  border:1px solid var(--line); background:var(--line-soft);
+}
+.caution{background:var(--warn-tint); border-color:transparent}
+.note p,.caution p{margin:0; color:var(--ink-soft)}
+.note p+p,.caution p+p{margin-top:10px}
+.note b,.caution b{color:var(--ink); display:block; margin-bottom:5px; font-size:13px; letter-spacing:.05em}
+.caution b{color:var(--warn)}
+
+/* ---------- FAQ ---------- */
+.qa{border-top:1px solid var(--line); padding:24px 0}
+.qa:last-of-type{border-bottom:1px solid var(--line)}
+.qa h3{margin:0 0 10px; font-size:18px}
+.qa p:last-child{margin-bottom:0}
+
+/* ---------- 카드 ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:0 0 30px}
+.card{
+  display:block; text-decoration:none; color:inherit; background:var(--raised);
+  border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:var(--shadow);
+}
+.card:hover{border-color:var(--accent-line)}
+.card h3{margin:0 0 7px; font-size:17px; color:var(--ink)}
+.card p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.65}
+.card .tag{font-size:12px; color:var(--ink-faint); letter-spacing:.05em; display:block; margin-bottom:9px}
+
+/* ---------- 참고문헌 ---------- */
+ol.refs{padding-left:20px; font-size:14.5px; color:var(--ink-soft); line-height:1.7}
+ol.refs li{margin-bottom:12px}
+ol.refs cite{font-style:normal; color:var(--ink)}
+
+/* ---------- 다음 단계 링크 ---------- */
+.onward{
+  border-top:1px solid var(--line); margin-top:8px; padding-top:22px;
+  font-size:15.5px; color:var(--ink-soft);
+}
+.onward a{font-weight:600}
+
+/* ---------- 제품 사진 ---------- */
+figure.shot{margin:0 0 26px}
+figure.shot img, figure.shot video{
+  width:100%; height:auto; display:block; border-radius:12px;
+  background:var(--line-soft); border:1px solid var(--line);
+}
+figure.shot figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:9px}
+.shot-pair{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 26px}
+@media (max-width:560px){ .shot-pair{grid-template-columns:1fr} }
+.shot-pair figure{margin:0}
+.shot-pair figcaption{text-align:center}
+figure.shot.narrow{max-width:420px}
+
+/* ---------- 제품 페이지 ---------- */
+.spec dt{font-size:13px; color:var(--ink-faint); letter-spacing:.04em; margin-top:14px}
+.spec dd{margin:2px 0 0; font-size:16px}
+.todo{
+  background:var(--warn-tint); color:var(--warn); border:1px dashed var(--warn);
+  border-radius:6px; padding:1px 7px; font-size:13.5px; font-weight:600; white-space:nowrap;
+}
+.buy{
+  display:inline-block; background:var(--accent); color:#FFFFFF; text-decoration:none;
+  font-weight:600; padding:13px 26px; border-radius:10px; font-size:16px; margin:6px 0 0;
+}
+.buy:hover{background:var(--accent-ink); color:#FFFFFF}
+
+/* ---------- 푸터 ---------- */
+.site-foot{border-top:1px solid var(--line); background:var(--raised); margin-top:40px}
+.site-foot .inner{max-width:var(--maxw); margin:0 auto; padding:34px 24px 44px; font-size:14px; color:var(--ink-soft)}
+.site-foot .disclose{
+  border-left:3px solid var(--accent-line); padding-left:14px; margin:0 0 22px; max-width:620px;
+}
+.site-foot nav{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:16px}
+.site-foot nav a{color:var(--ink-soft); text-decoration:none}
+.site-foot nav a:hover{color:var(--ink); text-decoration:underline}
+.site-foot .fine{font-size:13px; color:var(--ink-faint); margin:0}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://normalpint.github.io/learn/mechanism/#article",
+  "headline": "수면 중 상기도는 왜 좁아지는가 — 코골이 발생의 생리학적 단계",
+  "description": "수면 중 근긴장도 저하로 상기도 확장근의 힘이 약해지면 인두가 좁아지고, 좁은 통로를 지나는 기류가 연조직을 진동시켜 코골이 소음이 발생합니다.",
+  "inLanguage": "ko-KR",
+  "datePublished": "2026-08-29",
+  "dateModified": "2026-08-29",
+  "url": "https://normalpint.github.io/learn/mechanism/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://normalpint.github.io/learn/mechanism/" },
+  "isPartOf": { "@id": "https://normalpint.github.io/#website" },
+  "publisher": { "@id": "https://normalpint.github.io/#organization" },
+  "about": [
+    { "@type": "Thing", "name": "상기도" },
+    { "@type": "Thing", "name": "인두 협착" },
+    { "@type": "Thing", "name": "상기도 확장근" },
+    { "@type": "Thing", "name": "코골이" }
+  ],
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://normalpint.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "자료실", "item": "https://normalpint.github.io/learn/" },
+      { "@type": "ListItem", "position": 3, "name": "수면 중 상기도는 왜 좁아지는가", "item": "https://normalpint.github.io/learn/mechanism/" }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="/"><span class="dot"></span>코고리스 <small>수면 호흡 자료실</small></a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/" aria-current="page">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+<nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span>›</span><a href="/learn/">자료실</a><span>›</span>수면 중 상기도는 왜 좁아지는가</nav>
+<main id="main" class="doc">
+
+<article>
+  <div class="doc-head">
+    <span class="kicker">01 · 호흡 원리</span>
+    <h1>수면 중 상기도는 왜 좁아지는가</h1>
+    <p class="summary">
+      코골이는 코에서 나는 소리가 아니라, <strong>목 안쪽 인두가 좁아지면서 연조직이 진동해</strong> 나는 소리입니다.
+      수면 중 근긴장도가 떨어지면 기도를 열어두던 근육의 힘도 함께 약해지고, 좁아진 통로를 지나는 기류가 빨라지면서 진동이 시작됩니다.
+    </p>
+    <p class="doc-meta">최종 검토 2026-08-29 · 읽는 데 약 6분</p>
+  </div>
+
+  <section id="stages">
+    <h2>코골이는 어떤 단계를 거쳐 발생하나요?</h2>
+
+    <div class="answer">
+      <p><strong>① 수면 중 근긴장도 저하 → ② 상기도 확장근의 힘 약화 → ③ 인두 협착 → ④ 기류 가속과 연조직 진동</strong>의 네 단계를 거칩니다. 각 단계는 순차적이며, 앞 단계가 심할수록 뒤 단계도 심해집니다.</p>
+    </div>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 620 372" role="img" aria-labelledby="chain-title chain-desc" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit">
+        <title id="chain-title">상기도 협착에서 코골이 발생까지의 인과 사슬</title>
+        <desc id="chain-desc">상기도 확장근의 긴장도 저하와 인두 협착, 그로 인한 연조직 진동까지는 생리학적으로 확립된 경로입니다. 그 뒤의 확장근 훈련과 호흡 소음 감소는 소규모 임상 연구가 진행 중인 영역입니다.</desc>
+
+        <defs>
+          <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,1 L9,5 L0,9 z" fill="var(--ink-faint)"/>
+          </marker>
+        </defs>
+
+        <rect x="110" y="8" width="400" height="56" rx="12" fill="var(--accent-tint)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="310" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="var(--accent-ink)">수면 중 상기도 확장근의 긴장도 저하</text>
+        <text x="310" y="52" text-anchor="middle" font-size="13" fill="var(--ink-soft)">이설근 등의 활동 감소 · REM에서 최대</text>
+
+        <line x1="310" y1="64" x2="310" y2="84" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arw)"/>
+
+        <rect x="110" y="88" width="400" height="56" rx="12" fill="var(--accent-tint)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="310" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="var(--accent-ink)">인두 협착 → 기류 가속 → 연조직 진동</text>
+        <text x="310" y="132" text-anchor="middle" font-size="13" fill="var(--ink-soft)">이 진동음이 코골이</text>
+
+        <line x1="110" y1="176" x2="510" y2="176" stroke="var(--line)" stroke-width="1" stroke-dasharray="5 5"/>
+        <text x="310" y="171" text-anchor="middle" font-size="12" fill="var(--ink-faint)">↑ 여기까지 생리학적으로 확립된 경로</text>
+        <text x="310" y="194" text-anchor="middle" font-size="12" fill="var(--ink-faint)">↓ 여기부터 연구가 진행 중인 영역</text>
+
+        <rect x="110" y="212" width="400" height="56" rx="12" fill="none" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="310" y="236" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">확장근의 근력·지구력 훈련</text>
+        <text x="310" y="256" text-anchor="middle" font-size="13" fill="var(--ink-soft)">구인두 운동 · 호기 저항 운동(EMST)</text>
+
+        <line x1="310" y1="268" x2="310" y2="288" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#arw)"/>
+
+        <rect x="110" y="292" width="400" height="56" rx="12" fill="none" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="310" y="316" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">호흡 소음·AHI 지표의 변화</text>
+        <text x="310" y="336" text-anchor="middle" font-size="13" fill="var(--ink-soft)">소규모 연구에서 관찰 · 개인차 큼</text>
+      </svg>
+      <div class="legend">
+        <span><i class="solid"></i>생리학적으로 확립된 단계</span>
+        <span><i class="dashed"></i>임상 연구가 진행 중인 단계</span>
+      </div>
+      <figcaption>
+        그림 1. 상기도 협착에서 코골이 발생까지, 그리고 훈련이 개입하려는 지점.
+        앞의 두 단계와 뒤의 두 단계는 근거의 확실성이 다르므로 구분해 표시했습니다.
+        뒤 두 단계의 실제 연구 수치는 <a href="/learn/research/">연구 근거 문서</a>에 있습니다.
+      </figcaption>
+    </figure>
+
+    <figure class="table">
+      <figcaption>표 1. 수면 중 상기도에서 일어나는 4단계</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">단계</th><th scope="col">일어나는 일</th><th scope="col">결과</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 근긴장도 저하</strong></td>
+              <td>수면이 깊어질수록 골격근 전반의 긴장도가 떨어짐. 특히 REM 수면에서 가장 낮아짐</td>
+              <td>기도를 지탱하던 힘이 줄어듦</td>
+            </tr>
+            <tr>
+              <td><strong>② 확장근 약화</strong></td>
+              <td>혀를 앞으로 당겨 기도 공간을 확보하던 이설근 등 상기도 확장근의 활동이 감소</td>
+              <td>혀뿌리와 연구개가 뒤로 처짐</td>
+            </tr>
+            <tr>
+              <td><strong>③ 인두 협착</strong></td>
+              <td>뼈나 연골의 지지가 없는 인두 구간의 단면적이 좁아짐</td>
+              <td>같은 양의 공기가 좁은 길을 통과해야 함</td>
+            </tr>
+            <tr>
+              <td><strong>④ 기류 가속·진동</strong></td>
+              <td>좁아진 구간에서 유속이 빨라지고 기도 내압이 낮아지며 주변 연조직이 펄럭임</td>
+              <td>진동음 발생 = 코골이</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      네 번째 단계에서 협착이 더 진행되어 기도가 <strong>완전히 막히면</strong> 소리조차 나지 않는 무호흡(apnea)이 되고,
+      부분적으로 막혀 호흡량이 크게 줄면 저호흡(hypopnea)이 됩니다.
+      즉 코골이와 폐쇄성 수면무호흡은 서로 다른 별개의 현상이 아니라 <strong>같은 축 위의 정도 차이</strong>에 가깝습니다.
+    </p>
+  </section>
+
+  <section id="why-pharynx">
+    <h2>왜 하필 인두에서 문제가 생기나요?</h2>
+
+    <div class="answer">
+      <p>상기도 전체 경로 가운데 <strong>인두만 뼈나 연골의 지지 구조가 없기</strong> 때문입니다. 코와 후두는 단단한 벽이 통로를 지탱하지만, 인두는 근육의 힘만으로 열려 있습니다. 근육이 쉬면 그 구간부터 무너집니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 2. 상기도 구간별 지지 구조</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">구간</th><th scope="col">지지 구조</th><th scope="col">수면 중 협착 가능성</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>비강(코 안)</td><td>뼈와 연골</td><td>낮음 — 다만 점막 부종·중격만곡으로 저항이 늘 수 있음</td></tr>
+            <tr><td>비인두 · 구인두 · 하인두</td><td class="bad">없음 (근육과 연조직뿐)</td><td class="bad">높음 — 대부분의 협착이 이 구간에서 발생</td></tr>
+            <tr><td>후두 · 기관</td><td>연골 고리</td><td>낮음</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      이 구조적 사실이 이후의 모든 논의를 결정합니다. 코를 넓히는 접근과 인두를 지탱하는 접근이
+      전혀 다른 문제를 다루는 이유도 여기에 있습니다. 이 차이는 <a href="/learn/compare/">대안별 작용 부위 비교</a>에서 자세히 다룹니다.
+    </p>
+  </section>
+
+  <section id="causes">
+    <h2>기도가 좁아지는 원인은 무엇으로 나뉘나요?</h2>
+
+    <div class="answer">
+      <p>
+        크게 두 갈래입니다. <strong>구조적 원인</strong>은 기도 공간 자체가 물리적으로 좁은 것이고,
+        <strong>기능적 원인</strong>은 공간은 충분한데 그 공간을 지탱하는 근육이 약해진 것입니다.
+        둘은 함께 있을 수 있으며, <strong>어느 쪽이 주된지에 따라 접근이 완전히 달라집니다.</strong>
+      </p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 3. 구조적 원인과 기능적 원인</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">구분</th><th scope="col">구조적 원인</th><th scope="col">기능적 원인</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>무엇이 문제인가</td>
+              <td>기도 공간 자체가 좁음</td>
+              <td>공간을 지탱하는 근육이 약함</td>
+            </tr>
+            <tr>
+              <td>구체적 예</td>
+              <td>경부 지방 축적, 편도·아데노이드 비대, 하악 후퇴 등 선천적 골격 구조, 비중격만곡</td>
+              <td>상기도 확장근(이설근·이설골근 등)의 근력·반응성 저하</td>
+            </tr>
+            <tr>
+              <td>깨어 있을 때</td>
+              <td>구조는 그대로 있음</td>
+              <td>확장근이 보상해 증상이 드러나지 않음</td>
+            </tr>
+            <tr>
+              <td>잠들었을 때</td>
+              <td colspan="2">둘 다 협착으로 이어짐 — 근긴장도 저하가 방아쇠</td>
+            </tr>
+            <tr>
+              <td>대응 방향</td>
+              <td>수술, 체중 감량, 기도를 물리적으로 여는 장치</td>
+              <td>근육 훈련, 또는 착용 중 기도를 지지하는 장치</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      이 구분이 실질적으로 중요한 이유가 있습니다.
+      <strong>기능적 원인의 비중이 큰 사람에게 구조를 겨냥한 접근만 반복하면 결과가 잘 나오지 않습니다.</strong>
+      코를 넓히거나 조직을 제거하는 방법은 구조에 작용하지, 잠든 뒤 근육이 풀리는 문제 자체를 바꾸지는 않기 때문입니다.
+      반대의 경우도 성립합니다 — 편도가 뚜렷하게 비대한 사람에게 근육 훈련만으로 접근하는 것 역시 어긋납니다.
+    </p>
+
+    <p>
+      나이가 들수록 코골이가 흔해지는 현상은 기능적 원인 쪽에서 설명됩니다.
+      노화로 줄어드는 것은 팔다리 근육만이 아니며, <a href="/learn/genioglossus/">상기도 확장근</a>의 근력과 반응성도 함께 낮아집니다.
+      각 방법이 어느 원인을 겨냥하는지는 <a href="/learn/compare/">대안 비교 문서</a>에 표로 정리했습니다.
+    </p>
+  </section>
+
+  <section id="sound">
+    <h2>소리는 정확히 어디에서 나나요?</h2>
+
+    <div class="answer">
+      <p>단일 지점이 아니라 <strong>연구개·목젖·혀뿌리·인두 측벽·편도</strong> 중 한 곳 이상에서 발생하며, 사람마다 주 진동 부위가 다릅니다. 진동 부위가 다르면 같은 코골이라도 효과적인 접근이 달라집니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 4. 주요 진동 부위와 특징</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">진동 부위</th><th scope="col">특징</th><th scope="col">관련 요인</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>연구개·목젖</td><td>가장 흔한 진동원. 저음의 펄럭이는 소리</td><td>연구개 길이, 목젖 비대</td></tr>
+            <tr><td>혀뿌리(설근)</td><td>바로 누웠을 때 뚜렷하게 악화되는 경향</td><td>이설근 긴장도, 혀 부피</td></tr>
+            <tr><td>인두 측벽</td><td>측벽이 두꺼우면 좌우에서 통로가 좁아짐</td><td>경부 지방 축적</td></tr>
+            <tr><td>편도·아데노이드</td><td>소아에서 상대적으로 비중이 큼</td><td>편도 비대</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      기도가 좁아진 구간에서는 같은 공기량이 통과하기 위해 유속이 올라가고, 유속이 올라간 만큼 기도 내부 압력은 낮아집니다.
+      이 압력 차가 무른 연조직을 안쪽으로 끌어당기고, 끌려 들어간 조직이 다시 기류에 밀려나기를 초당 수십 회 반복하면서
+      우리가 듣는 진동음이 만들어집니다.
+    </p>
+
+    <div class="note">
+      <b>직관적으로 이해하기</b>
+      <p>
+        정원용 호스로 물을 뿌릴 때 끝을 손가락으로 반쯤 막으면 물줄기가 세지면서 소리가 납니다.
+        물의 양이 늘어난 것이 아니라 <strong>출구가 좁아져 유속과 압력이 바뀐 것</strong>입니다.
+        코골이도 같은 구조입니다. 들이쉬는 공기의 양이 문제가 아니라, 그 공기가 지나는 통로가 좁아진 것이 문제입니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="aggravators">
+    <h2>무엇이 협착을 악화시키나요?</h2>
+
+    <figure class="table">
+      <figcaption>표 5. 협착 악화 요인과 작용 경로</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">요인</th><th scope="col">작용 경로</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>앙와위(똑바로 누운 자세)</td><td>중력으로 혀뿌리와 연구개가 뒤로 이동 → 기도 단면적 감소</td></tr>
+            <tr><td>체중 증가</td><td>경부·인두 측벽 연조직 증가 → 기도 주변에서 압박</td></tr>
+            <tr><td>음주 · 진정제</td><td>상기도 확장근의 활동을 추가로 억제 → 근긴장도 저하 심화</td></tr>
+            <tr><td>비폐색(코막힘)</td><td>구강 호흡 유발, 흡기 시 음압 증가 → 인두 허탈 경향 증가</td></tr>
+            <tr><td>노화</td><td>근섬유 구성과 조직 탄력의 변화 → 확장근의 반응성 저하</td></tr>
+            <tr><td>수면 부족 · 불규칙한 수면</td><td>깊은 수면 비중 변화, 각성 반응 역치 변화</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      이 표에서 확인할 점은 요인 대부분이 <strong>기도 자체의 구조가 아니라 그 구조를 지탱하는 조건</strong>을 건드린다는 사실입니다.
+      자세, 체중, 음주, 근긴장도는 모두 협착이 시작되는 문턱을 낮추거나 높입니다.
+    </p>
+  </section>
+
+  <section id="boundary">
+    <h2>코골이와 수면무호흡의 경계는 어디인가요?</h2>
+
+    <div class="answer">
+      <p>수면다원검사로 측정한 <strong>무호흡·저호흡 지수(AHI, 시간당 무호흡·저호흡 횟수)</strong>가 기준입니다. 소리의 크기가 아니라 호흡이 실제로 멈춘 횟수로 판단하며, 소리 없이도 무호흡이 있을 수 있습니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 6. 성인 기준 AHI 분류 (참고용)</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">AHI (회/시간)</th><th scope="col">분류</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">5 미만</td><td>정상 범위 — 소음이 있어도 단순 코골이로 분류될 수 있음</td></tr>
+            <tr><td class="num">5 이상 15 미만</td><td>경증 폐쇄성 수면무호흡</td></tr>
+            <tr><td class="num">15 이상 30 미만</td><td>중등도 폐쇄성 수면무호흡</td></tr>
+            <tr><td class="num">30 이상</td><td>중증 폐쇄성 수면무호흡</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <div class="caution">
+      <b>스스로 판단할 수 없는 영역</b>
+      <p>
+        소리의 크기와 AHI는 비례하지 않습니다. 조용한 코골이에도 중증 무호흡이 있을 수 있고, 큰 코골이에도 무호흡이 없을 수 있습니다.
+        수면 중 호흡이 멎는 것을 목격당했거나, 충분히 자도 주간 졸림이 심하거나, 아침 두통·야간 빈뇨·고혈압이 동반된다면
+        <strong>수면다원검사와 전문의 진료가 우선</strong>입니다. 근육 훈련을 포함한 어떤 생활 요법도 진단을 대신하지 못합니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="implication">
+    <h2>여기서 이어지는 질문</h2>
+    <p>
+      협착의 출발점이 <strong>상기도 확장근의 긴장도 저하</strong>라면, 자연히 다음 두 가지가 궁금해집니다.
+    </p>
+    <ol>
+      <li>기도를 여는 근육은 구체적으로 무엇이고 어떻게 작동하는가 → <a href="/learn/genioglossus/">이설근과 상기도 확장근</a></li>
+      <li>그 근육을 훈련하면 실제로 무엇이 달라지는가 → <a href="/learn/emst/">호기근 강도 훈련(EMST)이란</a>, <a href="/learn/research/">연구 근거</a></li>
+    </ol>
+  </section>
+
+  <section id="refs">
+    <h2>참고 문헌</h2>
+    <ol class="refs">
+      <li><cite>Guimarães KC, Drager LF, Genta PR, Marcondes BF, Lorenzi-Filho G.</cite> Effects of oropharyngeal exercises on patients with moderate obstructive sleep apnea syndrome. <em>Am J Respir Crit Care Med.</em> 2009;179(10):962–966. doi:10.1164/rccm.200806-981OC</li>
+      <li><cite>Ieto V, Kayamori F, Montes MI, et al.</cite> Effects of oropharyngeal exercises on snoring: a randomized trial. <em>Chest.</em> 2015;148(3):683–691.</li>
+      <li><cite>Camacho M, Certal V, Abdullatif J, et al.</cite> Myofunctional therapy to treat obstructive sleep apnea: a systematic review and meta-analysis. <em>Sleep.</em> 2015;38(5):669–675.</li>
+    </ol>
+  </section>
+
+  <p class="onward">
+    다음 문서 → <a href="/learn/genioglossus/">이설근과 상기도 확장근</a>
+  </p>
+</article>
+
+</main>
+</div>
+
+<footer class="site-foot">
+  <div class="inner">
+    <p class="disclose">
+      본 자료실(<code>/learn/</code>)은 호기 저항 운동 기구를 제조·판매하는 <strong>코고리스</strong>가 운영합니다.
+      자료실의 모든 문서는 공개된 학술 문헌만을 근거로 하며 자사 제품을 언급하거나 그 효능을 주장하지 않습니다.
+      제품 정보는 <a href="/product/">제품 페이지</a>에서 물리적 규격 중심으로 별도 제공합니다.
+    </p>
+    <nav aria-label="푸터 메뉴">
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+    <p class="fine">
+      © 2026 코고리스. 본 사이트의 정보는 일반적인 건강 정보이며 의학적 진단·치료를 대신하지 않습니다.
+      증상이 지속되면 반드시 의료 전문가와 상담하십시오.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

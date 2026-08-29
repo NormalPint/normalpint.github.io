@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>코고리스 호기 저항 운동 기구 — 물리적 규격과 사용 방법</title>
+<meta name="description" content="마우스피스와 저항 조절 본체가 분리되는 2피스 구조의 호기 저항 운동 기구입니다. 가변 오리피스 방식으로 날숨 저항을 무단 조절하며 1일 5~10분 사용합니다. 재질·크기·중량 등 물리적 규격과 사용·세척 방법을 안내합니다.">
+<link rel="canonical" href="https://normalpint.github.io/product/">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="코고리스">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="코고리스 호기 저항 운동 기구 — 규격·사용법·세척 안내">
+<meta property="og:description" content="마우스피스와 저항 조절 본체가 분리되는 2피스 구조의 호기 저항 운동 기구. 규격·사용법·세척 안내.">
+<meta property="og:url" content="https://normalpint.github.io/product/">
+<meta property="og:image" content="https://normalpint.github.io/assets/img/parts-black.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style id="site-css">
+/* 코고리스 — 공용 스타일. 텍스트 우선, 시맨틱 구조 유지. */
+
+:root{
+  --paper:#F5F7F5;
+  --raised:#FFFFFF;
+  --ink:#17211D;
+  --ink-soft:#4C5A54;
+  --ink-faint:#83908A;
+  --line:#DCE3DF;
+  --line-soft:#EAEEEC;
+  --accent:#1F6F63;
+  --accent-ink:#0E4C43;
+  --accent-tint:#E4F1EC;
+  --accent-line:#BEDCD2;
+  --warn:#A3402F;
+  --warn-tint:#F8EAE6;
+  --shadow:0 1px 2px rgba(20,30,26,.05), 0 10px 30px -18px rgba(20,30,26,.18);
+  --maxw:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111917;
+    --raised:#18221F;
+    --ink:#E6EDE9;
+    --ink-soft:#A6B4AE;
+    --ink-faint:#6F7E78;
+    --line:#2A3A35;
+    --line-soft:#212E2A;
+    --accent:#5FC1AE;
+    --accent-ink:#8EDAC8;
+    --accent-tint:#16302A;
+    --accent-line:#2B5048;
+    --warn:#E48876;
+    --warn-tint:#39211C;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111917; --raised:#18221F; --ink:#E6EDE9; --ink-soft:#A6B4AE;
+  --ink-faint:#6F7E78; --line:#2A3A35; --line-soft:#212E2A;
+  --accent:#5FC1AE; --accent-ink:#8EDAC8; --accent-tint:#16302A; --accent-line:#2B5048;
+  --warn:#E48876; --warn-tint:#39211C;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.8; -webkit-font-smoothing:antialiased;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto}}
+
+h1,h2,h3,h4{font-weight:700; color:var(--ink); line-height:1.4; text-wrap:balance; margin:0}
+a{color:var(--accent-ink); text-underline-offset:3px}
+a:hover{color:var(--accent)}
+img{max-width:100%; height:auto}
+
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:8px; top:8px; z-index:99; background:var(--raised); padding:10px 14px; border-radius:8px; border:1px solid var(--line)}
+
+/* ---------- 헤더 ---------- */
+.site-head{border-bottom:1px solid var(--line); background:var(--raised)}
+.site-head .inner{
+  max-width:var(--maxw); margin:0 auto; padding:16px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.brand{display:flex; align-items:baseline; gap:9px; text-decoration:none; color:var(--ink); font-weight:700; font-size:18px}
+.brand .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; align-self:center}
+.brand small{font-weight:500; font-size:12.5px; color:var(--ink-faint); letter-spacing:.02em}
+.site-nav{display:flex; gap:4px; flex-wrap:wrap}
+.site-nav a{
+  text-decoration:none; color:var(--ink-soft); font-size:14.5px; font-weight:500;
+  padding:7px 11px; border-radius:8px;
+}
+.site-nav a:hover{background:var(--line-soft); color:var(--ink)}
+.site-nav a[aria-current="page"]{background:var(--accent-tint); color:var(--accent-ink)}
+
+/* ---------- 레이아웃 ---------- */
+.shell{max-width:var(--maxw); margin:0 auto; padding:0 24px 88px}
+.doc{max-width:760px; margin:0 auto}
+@media (max-width:640px){ .shell{padding:0 18px 64px} body{font-size:16px} }
+
+.crumbs{font-size:13.5px; color:var(--ink-faint); padding:20px 0 0; margin:0}
+.crumbs a{color:var(--ink-faint); text-decoration:none}
+.crumbs a:hover{color:var(--ink); text-decoration:underline}
+.crumbs span{margin:0 6px}
+
+.doc-head{padding:26px 0 30px; border-bottom:1px solid var(--line); margin-bottom:38px}
+.kicker{
+  display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.06em;
+  color:var(--accent-ink); background:var(--accent-tint); border:1px solid var(--accent-line);
+  padding:4px 10px; border-radius:999px; margin-bottom:16px;
+}
+.doc-head h1{font-size:clamp(26px,4.4vw,36px); margin-bottom:14px}
+.summary{font-size:17.5px; color:var(--ink-soft); margin:0}
+.summary strong{color:var(--ink); font-weight:600}
+.doc-meta{margin-top:18px; font-size:13.5px; color:var(--ink-faint)}
+
+section{margin-bottom:44px; scroll-margin-top:24px}
+h2{font-size:23px; margin:0 0 14px; padding-top:6px}
+h3{font-size:18px; margin:30px 0 10px}
+h4{font-size:16px; margin:22px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px; padding-left:22px}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+strong{font-weight:600}
+
+/* 두괄식 답변 블록 */
+.answer{
+  background:var(--accent-tint); border:1px solid var(--accent-line);
+  border-radius:12px; padding:16px 20px; margin:0 0 22px;
+}
+.answer p{margin:0; color:var(--ink)}
+.answer p + p{margin-top:10px}
+
+/* ---------- 다이어그램 ---------- */
+figure.diagram{margin:0 0 28px}
+figure.diagram svg{width:100%; height:auto; display:block}
+figure.diagram figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:10px}
+.legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:12px; font-size:13.5px; color:var(--ink-soft)}
+.legend span{display:flex; align-items:center; gap:7px}
+.legend i{width:22px; height:12px; border-radius:4px; flex:none; display:block}
+.legend i.solid{background:var(--accent-tint); border:1.5px solid var(--accent)}
+.legend i.dashed{background:transparent; border:1.5px dashed var(--ink-faint)}
+
+/* ---------- 표 ---------- */
+figure.table{margin:0 0 26px}
+figure.table figcaption{font-size:13.5px; color:var(--ink-faint); margin-bottom:8px}
+.scroll{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--raised)}
+table{border-collapse:collapse; width:100%; min-width:520px}
+th,td{text-align:left; padding:11px 16px; font-size:15px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{font-size:13px; font-weight:600; color:var(--ink-faint); background:var(--line-soft); letter-spacing:.02em}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+td.good{color:var(--accent-ink); font-weight:600}
+td.bad{color:var(--warn); font-weight:600}
+
+/* ---------- 콜아웃 ---------- */
+.note,.caution{
+  border-radius:12px; padding:16px 20px; margin:0 0 24px; font-size:15.5px;
+  border:1px solid var(--line); background:var(--line-soft);
+}
+.caution{background:var(--warn-tint); border-color:transparent}
+.note p,.caution p{margin:0; color:var(--ink-soft)}
+.note p+p,.caution p+p{margin-top:10px}
+.note b,.caution b{color:var(--ink); display:block; margin-bottom:5px; font-size:13px; letter-spacing:.05em}
+.caution b{color:var(--warn)}
+
+/* ---------- FAQ ---------- */
+.qa{border-top:1px solid var(--line); padding:24px 0}
+.qa:last-of-type{border-bottom:1px solid var(--line)}
+.qa h3{margin:0 0 10px; font-size:18px}
+.qa p:last-child{margin-bottom:0}
+
+/* ---------- 카드 ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:0 0 30px}
+.card{
+  display:block; text-decoration:none; color:inherit; background:var(--raised);
+  border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:var(--shadow);
+}
+.card:hover{border-color:var(--accent-line)}
+.card h3{margin:0 0 7px; font-size:17px; color:var(--ink)}
+.card p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.65}
+.card .tag{font-size:12px; color:var(--ink-faint); letter-spacing:.05em; display:block; margin-bottom:9px}
+
+/* ---------- 참고문헌 ---------- */
+ol.refs{padding-left:20px; font-size:14.5px; color:var(--ink-soft); line-height:1.7}
+ol.refs li{margin-bottom:12px}
+ol.refs cite{font-style:normal; color:var(--ink)}
+
+/* ---------- 다음 단계 링크 ---------- */
+.onward{
+  border-top:1px solid var(--line); margin-top:8px; padding-top:22px;
+  font-size:15.5px; color:var(--ink-soft);
+}
+.onward a{font-weight:600}
+
+/* ---------- 제품 사진 ---------- */
+figure.shot{margin:0 0 26px}
+figure.shot img, figure.shot video{
+  width:100%; height:auto; display:block; border-radius:12px;
+  background:var(--line-soft); border:1px solid var(--line);
+}
+figure.shot figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:9px}
+.shot-pair{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 26px}
+@media (max-width:560px){ .shot-pair{grid-template-columns:1fr} }
+.shot-pair figure{margin:0}
+.shot-pair figcaption{text-align:center}
+figure.shot.narrow{max-width:420px}
+
+/* ---------- 제품 페이지 ---------- */
+.spec dt{font-size:13px; color:var(--ink-faint); letter-spacing:.04em; margin-top:14px}
+.spec dd{margin:2px 0 0; font-size:16px}
+.todo{
+  background:var(--warn-tint); color:var(--warn); border:1px dashed var(--warn);
+  border-radius:6px; padding:1px 7px; font-size:13.5px; font-weight:600; white-space:nowrap;
+}
+.buy{
+  display:inline-block; background:var(--accent); color:#FFFFFF; text-decoration:none;
+  font-weight:600; padding:13px 26px; border-radius:10px; font-size:16px; margin:6px 0 0;
+}
+.buy:hover{background:var(--accent-ink); color:#FFFFFF}
+
+/* ---------- 푸터 ---------- */
+.site-foot{border-top:1px solid var(--line); background:var(--raised); margin-top:40px}
+.site-foot .inner{max-width:var(--maxw); margin:0 auto; padding:34px 24px 44px; font-size:14px; color:var(--ink-soft)}
+.site-foot .disclose{
+  border-left:3px solid var(--accent-line); padding-left:14px; margin:0 0 22px; max-width:620px;
+}
+.site-foot nav{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:16px}
+.site-foot nav a{color:var(--ink-soft); text-decoration:none}
+.site-foot nav a:hover{color:var(--ink); text-decoration:underline}
+.site-foot .fine{font-size:13px; color:var(--ink-faint); margin:0}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://normalpint.github.io/product/#product",
+  "name": "코고리스 호기 저항 운동 기구",
+  "description": "마우스피스와 저항 조절 본체가 분리되는 2피스 구조의 호기 저항 운동 기구입니다.",
+  "category": "운동 기구",
+  "url": "https://normalpint.github.io/product/",
+  "image": [
+    "https://normalpint.github.io/assets/img/parts-black.jpg",
+    "https://normalpint.github.io/assets/img/assembled-black.jpg",
+    "https://normalpint.github.io/assets/img/mouthpiece-interior.jpg"
+  ],
+  "brand": { "@type": "Brand", "name": "코고리스" },
+  "manufacturer": { "@id": "https://normalpint.github.io/#organization" },
+  "material": "본체 ABS · 마우스피스 실리콘",
+  "width":  { "@type": "QuantitativeValue", "value": 50,  "unitCode": "MMT" },
+  "height": { "@type": "QuantitativeValue", "value": 100, "unitCode": "MMT" },
+  "depth":  { "@type": "QuantitativeValue", "value": 30,  "unitCode": "MMT" },
+  "weight": { "@type": "QuantitativeValue", "value": 50,  "unitCode": "GRM" },
+  "inLanguage": "ko-KR",
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "구조", "value": "마우스피스 + 저항 조절 본체의 2피스 분리형" },
+    { "@type": "PropertyValue", "name": "부하 방식", "value": "가변 오리피스 — 공기 통로의 단면적을 바꿔 날숨 저항을 조절" },
+    { "@type": "PropertyValue", "name": "저항 조절", "value": "본체 회전식 무단(연속) 조절. − 방향에서 저항이 높아지고 + 방향에서 낮아짐" },
+    { "@type": "PropertyValue", "name": "구성품", "value": "저항 조절 본체 1개, 실리콘 마우스피스 1개" },
+    { "@type": "PropertyValue", "name": "마우스피스", "value": "물림 돌기와 입술 플랜지를 갖춘 실리콘 마우스피스" },
+    { "@type": "PropertyValue", "name": "1회 운동량", "value": "5회 × 5세트 = 25회 호흡" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="/"><span class="dot"></span>코고리스 <small>수면 호흡 자료실</small></a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/" aria-current="page">제품</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+<nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span>›</span>제품</nav>
+<main id="main" class="doc">
+
+  <div class="doc-head">
+    <span class="kicker">공산품 · 운동 기구</span>
+    <h1>코고리스 호기 저항 운동 기구</h1>
+    <p class="summary">
+      날숨에 <strong>무단으로 조절되는 저항</strong>을 걸어 사용하는 호흡 운동 기구입니다.
+      마우스피스와 저항 조절 본체가 분리되는 <strong>2피스 구조</strong>이며,
+      이 페이지는 <strong>운영 주체가 어떤 제품을 만드는지 밝히기 위한 것</strong>으로, 제품의 물리적 규격과 사용·관리 방법만을 안내합니다.
+    </p>
+    <p class="doc-meta">최종 수정 2026-08-29</p>
+  </div>
+
+  <figure class="shot">
+    <img src="/assets/img/parts-black.jpg" width="1200" height="1136"
+         alt="코고리스 호기 저항 운동 기구의 마우스피스와 저항 조절 본체가 분리되어 나란히 놓인 모습">
+    <figcaption>마우스피스(좌)와 저항 조절 본체(우). 손으로 분리·결합할 수 있는 2피스 구조입니다.</figcaption>
+  </figure>
+
+  <div class="note">
+    <b>이 페이지의 성격</b>
+    <p>
+      본 제품은 <strong>일반 공산품(운동 기구)</strong>입니다.
+      의료기기가 아니며, 질병의 진단·치료·경감·처치 또는 예방을 목적으로 하지 않습니다.
+      따라서 이 페이지에는 어떠한 의학적 효능이나 증상 변화에 관한 표현도 포함하지 않습니다.
+    </p>
+  </div>
+
+  <section id="spec">
+    <h2>제품 규격</h2>
+
+    <figure class="table">
+      <figcaption>표 1. 기본 규격</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">항목</th><th scope="col">내용</th></tr></thead>
+          <tbody>
+            <tr><td>품목</td><td>호기 저항 운동 기구 (운동용품)</td></tr>
+            <tr><td>구조</td><td>마우스피스 + 저항 조절 본체의 <strong>2피스 분리형</strong></td></tr>
+            <tr><td>마우스피스 형태</td><td>물림 돌기(바이트 탭)와 입술 플랜지를 갖춘 실리콘 마우스피스</td></tr>
+            <tr><td>부하 방식</td><td><strong>가변 오리피스 방식</strong> — 공기가 지나는 통로의 단면적을 바꿔 날숨에 걸리는 저항을 조절합니다</td></tr>
+            <tr><td>저항 조절 방식</td><td>본체 회전식 <strong>무단(연속) 조절</strong> — 단계 구분 없이 임의의 세기로 맞출 수 있습니다</td></tr>
+            <tr><td>본체 재질</td><td>ABS</td></tr>
+            <tr><td>마우스피스 재질</td><td>실리콘</td></tr>
+            <tr><td>크기</td><td>가로 50 × 높이 100 × 깊이 30 mm</td></tr>
+            <tr><td>중량</td><td>약 50 g</td></tr>
+            <tr><td>구성품</td><td>저항 조절 본체 1개, 실리콘 마우스피스 1개</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+  </section>
+
+  <section id="structure">
+    <h2>구조 설명</h2>
+
+    <h3>2피스 분리형 구조</h3>
+    <p>
+      <strong>마우스피스</strong>와 <strong>저항 조절 본체</strong> 두 부분으로 이루어져 있으며, 손으로 분리·결합할 수 있습니다.
+      분리되므로 마우스피스만 따로 꺼내 세척할 수 있고, 마우스피스만 별도로 교체하는 것도 가능합니다.
+    </p>
+
+    <h3>마우스피스</h3>
+    <p>
+      안쪽에 <strong>물림 돌기(바이트 탭)</strong>가 좌우 한 쌍으로 배치되어 있어 어금니로 물어 고정합니다.
+      바깥쪽 플랜지는 입술과 잇몸 사이에 들어가 공기가 새지 않도록 밀폐합니다.
+      이 두 요소가 함께 작동해야 설정한 저항이 실제로 걸립니다.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/img/mouthpiece-interior.jpg" width="1200" height="1291" loading="lazy"
+           alt="마우스피스 내부. 좌우 한 쌍의 물림 돌기와 바깥쪽 입술 플랜지가 보인다">
+      <figcaption>마우스피스 내부 — 좌우 물림 돌기(어금니로 무는 부분)와 바깥쪽 입술 플랜지.</figcaption>
+    </figure>
+
+    <h3>저항 조절 본체</h3>
+    <p>
+      본체를 돌려 <strong>공기가 지나는 통로의 크기</strong>를 바꾸는 방식입니다.
+      통로를 좁힐수록 같은 양의 공기를 내보내는 데 더 큰 압력이 필요합니다.
+      <strong><code>−</code> 방향으로 돌리면 저항이 높아지고, <code>+</code> 방향으로 돌리면 낮아집니다.</strong>
+    </p>
+
+    <div class="shot-pair">
+      <figure class="shot">
+        <video src="/assets/img/dial-plus.mp4" poster="/assets/img/dial-plus-poster.jpg"
+               width="420" height="660" autoplay muted loop playsinline
+               aria-label="저항을 낮추는 플러스 방향으로 본체를 돌리는 모습"></video>
+        <figcaption>저항 낮추기 (<code>+</code> 방향)</figcaption>
+      </figure>
+      <figure class="shot">
+        <video src="/assets/img/dial-minus.mp4" poster="/assets/img/dial-minus-poster.jpg"
+               width="420" height="586" autoplay muted loop playsinline
+               aria-label="저항을 높이는 마이너스 방향으로 본체를 돌리는 모습"></video>
+        <figcaption>저항 높이기 (<code>−</code> 방향)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="howto">
+    <h2>사용 방법</h2>
+
+    <ol>
+      <li><strong>결합</strong> — 마우스피스를 저항 조절 본체에 끝까지 밀어 넣어 결합합니다. 틈이 있으면 공기가 새어 저항이 제대로 걸리지 않습니다.</li>
+      <li><strong>저항 설정</strong> — 본체를 돌려 원하는 저항에 맞춥니다. 처음 사용할 때는 가장 낮은 저항에서 시작합니다.</li>
+      <li><strong>자세</strong> — 등을 펴고 바르게 앉습니다.</li>
+      <li><strong>마우스피스 물기</strong> — 물림 돌기를 어금니로 가볍게 물고, 플랜지가 입술 안쪽에 자리하도록 넣어 공기가 새지 않게 밀착시킵니다.</li>
+      <li><strong>들이쉬기</strong> — 코로 숨을 깊게 들이마십니다.</li>
+      <li><strong>내쉬기</strong> — 저항을 이겨내고 공기가 빠져나갈 만큼 입으로 강하게 내쉽니다.</li>
+      <li><strong>반복</strong> — 5회를 한 세트로 하여 총 5세트(25회)를 실시하고, 세트 사이에는 충분히 호흡을 고릅니다.</li>
+    </ol>
+
+    <figure class="shot">
+      <img src="/assets/img/assembled-black.jpg" width="1200" height="900" loading="lazy"
+           alt="마우스피스와 저항 조절 본체를 결합한 상태의 코고리스 호기 저항 운동 기구">
+      <figcaption>결합을 마친 상태. 마우스피스가 본체에 끝까지 밀착되어야 공기가 새지 않습니다.</figcaption>
+    </figure>
+
+    <figure class="table">
+      <figcaption>표 2. 사용량 예시</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">항목</th><th scope="col">내용</th></tr></thead>
+          <tbody>
+            <tr><td>1회 운동량</td><td>5회 × 5세트 = 25회 호흡</td></tr>
+            <tr><td>소요 시간</td><td>1일 5~10분 내외 (세트 사이 휴식 포함)</td></tr>
+            <tr><td>권장 빈도</td><td>1일 1회</td></tr>
+            <tr><td>저항 조정</td><td>설정한 저항에서 25회를 수월하게 마칠 수 있게 되면 조금 더 높입니다</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <figure class="shot narrow">
+      <img src="/assets/img/timer.jpg" width="1200" height="1283" loading="lazy"
+           alt="코고리스 호기 저항 운동 기구와 타이머를 나란히 놓은 모습">
+      <figcaption>타이머를 맞춰두면 세트 사이 휴식 시간을 일정하게 유지하기 쉽습니다.</figcaption>
+    </figure>
+
+    <div class="note">
+      <b>저항을 올리는 기준</b>
+      <p>
+        무단 조절이므로 눈금에 얽매이지 않고 그날의 상태에 맞춰 세밀하게 맞출 수 있습니다.
+        다만 지나치게 낮으면 운동 부하가 충분히 걸리지 않고, 지나치게 높으면 자세가 무너지거나 공기가 새기 쉽습니다.
+        <strong>마지막 세트에서 약간 힘들다고 느끼는 세기</strong>가 적정 범위의 기준입니다.
+        한 번 맞춘 위치를 기억해 두려면 본체의 결합선 위치를 표시해 두는 방법이 있습니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="clean">
+    <h2>세척 및 위생 관리</h2>
+
+    <ol>
+      <li><strong>분리</strong> — 마우스피스를 저항 조절 본체에서 분리합니다.</li>
+      <li>사용 후에는 <strong>미지근한 흐르는 물</strong>에 마우스피스를 헹굽니다.</li>
+      <li>주 1회 이상 중성 세제를 푼 물에 담가 부드럽게 세척한 뒤 충분히 헹굽니다.</li>
+      <li>세척 후에는 물기를 털어내고 <strong>통풍이 잘 되는 그늘</strong>에서 완전히 건조시킵니다.</li>
+      <li>완전히 마른 뒤 다시 결합해 통기성 있는 케이스에 보관합니다.</li>
+    </ol>
+
+    <figure class="table">
+      <figcaption>표 3. 세척 시 피해야 할 것</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">금지 사항</th><th scope="col">이유</th></tr></thead>
+          <tbody>
+            <tr><td>전자레인지 · 식기세척기 사용</td><td>변형 및 파손 우려</td></tr>
+            <tr><td>알코올 · 표백제 · 연마제 사용</td><td>재질 손상 및 잔류 우려</td></tr>
+            <tr><td>직사광선 건조 · 드라이어 온풍 건조</td><td>변형 및 변색 우려</td></tr>
+            <tr><td>젖은 상태로 밀폐 보관</td><td>내부 오염 우려</td></tr>
+            <tr><td><strong>저항 조절 본체</strong>를 물에 담그기</td><td>내부 기구부 변형·손상 우려</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+  </section>
+
+  <section id="safety">
+    <h2>사용 시 주의사항</h2>
+
+    <ul>
+      <li>본 제품은 <strong>개인 전용</strong>입니다. 다른 사람과 함께 사용하지 마십시오.</li>
+      <li>어린이의 손이 닿지 않는 곳에 보관하고, 어린이가 사용할 경우 보호자가 함께하십시오.</li>
+      <li>사용 중 <strong>어지럼·두통·흉통·불편감</strong>이 느껴지면 즉시 중단하십시오.</li>
+      <li>고혈압이 조절되지 않는 경우, 최근 흉부·복부 수술을 받은 경우, 기흉 병력이 있는 경우, 고막 천공이나 최근 중이 수술을 받은 경우, 심혈관 질환이 있는 경우, 임신 중인 경우에는 <strong>사용 전 전문가와 상담</strong>하십시오.</li>
+      <li>제품에 균열·변형·파손이 있으면 사용을 중단하십시오.</li>
+      <li>제품을 임의로 분해하거나 개조하지 마십시오.</li>
+      <li>고온의 차량 내부 등 <strong>40℃ 이상의 환경에 방치</strong>하지 마십시오.</li>
+    </ul>
+
+    <div class="caution">
+      <b>건강 상태에 관한 안내</b>
+      <p>
+        본 제품은 운동 기구이며 의료기기가 아닙니다.
+        수면이나 호흡과 관련해 지속되는 불편이 있다면, 제품 사용 여부와 무관하게 <strong>의료 전문가의 진료를 받으시기 바랍니다.</strong>
+      </p>
+    </div>
+  </section>
+
+</main>
+</div>
+
+<footer class="site-foot">
+  <div class="inner">
+    <p class="disclose">
+      본 제품 페이지는 공산품인 운동 기구의 <strong>물리적 규격과 사용 방법</strong>만을 안내합니다.
+      의학적 효능이나 증상 변화에 관한 내용은 포함하지 않으며, 수면 호흡 생리학에 관한 일반 정보는
+      <strong>코고리스</strong>가 별도로 운영하는 <a href="/learn/">자료실</a>에서 확인하실 수 있습니다.
+    </p>
+    <nav aria-label="푸터 메뉴">
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+    <p class="fine">
+      © 2026 코고리스. 본 제품은 의료기기가 아니며 질병의 진단·치료·경감·처치 또는 예방을 목적으로 하지 않습니다.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
