@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>양압기는 왜 계속 쓰기 어려운가 — 순응도 연구가 말하는 것 | 코고리스</title>
+<meta name="description" content="양압기(CPAP)는 폐쇄성 수면무호흡의 1차 표준 치료이며 효능이 확립되어 있습니다. 그러나 실제로 계속 사용하는 비율은 낮습니다. 비순응률 보고치, 20년간의 추세, '하루 4시간'이라는 기준의 근거, 순응도를 실제로 올린 개입이 무엇이었는지를 원문 수치로 정리했습니다.">
+<link rel="canonical" href="https://normalpint.github.io/learn/cpap-adherence/">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="코고리스">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="양압기는 왜 계속 쓰기 어려운가 — 순응도 연구가 말하는 것">
+<meta property="og:description" content="양압기의 효능과 실제 사용률은 다른 문제입니다. 비순응률, 20년 추세, 4시간 기준의 근거, 실제로 효과가 확인된 개입을 정리한 문서.">
+<meta property="og:url" content="https://normalpint.github.io/learn/cpap-adherence/">
+<style id="site-css">
+/* 코고리스 — 공용 스타일. 텍스트 우선, 시맨틱 구조 유지. */
+
+:root{
+  --paper:#F5F7F5;
+  --raised:#FFFFFF;
+  --ink:#17211D;
+  --ink-soft:#4C5A54;
+  --ink-faint:#83908A;
+  --line:#DCE3DF;
+  --line-soft:#EAEEEC;
+  --accent:#1F6F63;
+  --accent-ink:#0E4C43;
+  --accent-tint:#E4F1EC;
+  --accent-line:#BEDCD2;
+  --warn:#A3402F;
+  --warn-tint:#F8EAE6;
+  --shadow:0 1px 2px rgba(20,30,26,.05), 0 10px 30px -18px rgba(20,30,26,.18);
+  --maxw:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111917;
+    --raised:#18221F;
+    --ink:#E6EDE9;
+    --ink-soft:#A6B4AE;
+    --ink-faint:#6F7E78;
+    --line:#2A3A35;
+    --line-soft:#212E2A;
+    --accent:#5FC1AE;
+    --accent-ink:#8EDAC8;
+    --accent-tint:#16302A;
+    --accent-line:#2B5048;
+    --warn:#E48876;
+    --warn-tint:#39211C;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111917; --raised:#18221F; --ink:#E6EDE9; --ink-soft:#A6B4AE;
+  --ink-faint:#6F7E78; --line:#2A3A35; --line-soft:#212E2A;
+  --accent:#5FC1AE; --accent-ink:#8EDAC8; --accent-tint:#16302A; --accent-line:#2B5048;
+  --warn:#E48876; --warn-tint:#39211C;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.8; -webkit-font-smoothing:antialiased;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto}}
+
+h1,h2,h3,h4{font-weight:700; color:var(--ink); line-height:1.4; text-wrap:balance; margin:0}
+a{color:var(--accent-ink); text-underline-offset:3px}
+a:hover{color:var(--accent)}
+img{max-width:100%; height:auto}
+
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:8px; top:8px; z-index:99; background:var(--raised); padding:10px 14px; border-radius:8px; border:1px solid var(--line)}
+
+/* ---------- 헤더 ---------- */
+.site-head{border-bottom:1px solid var(--line); background:var(--raised)}
+.site-head .inner{
+  max-width:var(--maxw); margin:0 auto; padding:16px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.brand{display:flex; align-items:baseline; gap:9px; text-decoration:none; color:var(--ink); font-weight:700; font-size:18px}
+.brand .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; align-self:center}
+.brand small{font-weight:500; font-size:12.5px; color:var(--ink-faint); letter-spacing:.02em}
+.site-nav{display:flex; gap:4px; flex-wrap:wrap}
+.site-nav a{
+  text-decoration:none; color:var(--ink-soft); font-size:14.5px; font-weight:500;
+  padding:7px 11px; border-radius:8px;
+}
+.site-nav a:hover{background:var(--line-soft); color:var(--ink)}
+.site-nav a[aria-current="page"]{background:var(--accent-tint); color:var(--accent-ink)}
+
+/* ---------- 레이아웃 ---------- */
+.shell{max-width:var(--maxw); margin:0 auto; padding:0 24px 88px}
+.doc{max-width:760px; margin:0 auto}
+@media (max-width:640px){ .shell{padding:0 18px 64px} body{font-size:16px} }
+
+.crumbs{font-size:13.5px; color:var(--ink-faint); padding:20px 0 0; margin:0}
+.crumbs a{color:var(--ink-faint); text-decoration:none}
+.crumbs a:hover{color:var(--ink); text-decoration:underline}
+.crumbs span{margin:0 6px}
+
+.doc-head{padding:26px 0 30px; border-bottom:1px solid var(--line); margin-bottom:38px}
+.kicker{
+  display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.06em;
+  color:var(--accent-ink); background:var(--accent-tint); border:1px solid var(--accent-line);
+  padding:4px 10px; border-radius:999px; margin-bottom:16px;
+}
+.doc-head h1{font-size:clamp(26px,4.4vw,36px); margin-bottom:14px}
+.summary{font-size:17.5px; color:var(--ink-soft); margin:0}
+.summary strong{color:var(--ink); font-weight:600}
+.doc-meta{margin-top:18px; font-size:13.5px; color:var(--ink-faint)}
+
+section{margin-bottom:44px; scroll-margin-top:24px}
+h2{font-size:23px; margin:0 0 14px; padding-top:6px}
+h3{font-size:18px; margin:30px 0 10px}
+h4{font-size:16px; margin:22px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px; padding-left:22px}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+strong{font-weight:600}
+
+/* 두괄식 답변 블록 */
+.answer{
+  background:var(--accent-tint); border:1px solid var(--accent-line);
+  border-radius:12px; padding:16px 20px; margin:0 0 22px;
+}
+.answer p{margin:0; color:var(--ink)}
+.answer p + p{margin-top:10px}
+
+/* ---------- 다이어그램 ---------- */
+figure.diagram{margin:0 0 28px}
+figure.diagram svg{width:100%; height:auto; display:block}
+figure.diagram figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:10px}
+.legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:12px; font-size:13.5px; color:var(--ink-soft)}
+.legend span{display:flex; align-items:center; gap:7px}
+.legend i{width:22px; height:12px; border-radius:4px; flex:none; display:block}
+.legend i.solid{background:var(--accent-tint); border:1.5px solid var(--accent)}
+.legend i.dashed{background:transparent; border:1.5px dashed var(--ink-faint)}
+
+/* ---------- 표 ---------- */
+figure.table{margin:0 0 26px}
+figure.table figcaption{font-size:13.5px; color:var(--ink-faint); margin-bottom:8px}
+.scroll{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--raised)}
+table{border-collapse:collapse; width:100%; min-width:520px}
+th,td{text-align:left; padding:11px 16px; font-size:15px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{font-size:13px; font-weight:600; color:var(--ink-faint); background:var(--line-soft); letter-spacing:.02em}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+td.good{color:var(--accent-ink); font-weight:600}
+td.bad{color:var(--warn); font-weight:600}
+
+/* ---------- 콜아웃 ---------- */
+.note,.caution{
+  border-radius:12px; padding:16px 20px; margin:0 0 24px; font-size:15.5px;
+  border:1px solid var(--line); background:var(--line-soft);
+}
+.caution{background:var(--warn-tint); border-color:transparent}
+.note p,.caution p{margin:0; color:var(--ink-soft)}
+.note p+p,.caution p+p{margin-top:10px}
+.note b,.caution b{color:var(--ink); display:block; margin-bottom:5px; font-size:13px; letter-spacing:.05em}
+.caution b{color:var(--warn)}
+
+/* ---------- FAQ ---------- */
+.qa{border-top:1px solid var(--line); padding:24px 0}
+.qa:last-of-type{border-bottom:1px solid var(--line)}
+.qa h3{margin:0 0 10px; font-size:18px}
+.qa p:last-child{margin-bottom:0}
+
+/* ---------- 카드 ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:0 0 30px}
+.card{
+  display:block; text-decoration:none; color:inherit; background:var(--raised);
+  border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:var(--shadow);
+}
+.card:hover{border-color:var(--accent-line)}
+.card h3{margin:0 0 7px; font-size:17px; color:var(--ink)}
+.card p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.65}
+.card .tag{font-size:12px; color:var(--ink-faint); letter-spacing:.05em; display:block; margin-bottom:9px}
+
+/* ---------- 참고문헌 ---------- */
+ol.refs{padding-left:20px; font-size:14.5px; color:var(--ink-soft); line-height:1.7}
+ol.refs li{margin-bottom:12px}
+ol.refs cite{font-style:normal; color:var(--ink)}
+
+/* ---------- 다음 단계 링크 ---------- */
+.onward{
+  border-top:1px solid var(--line); margin-top:8px; padding-top:22px;
+  font-size:15.5px; color:var(--ink-soft);
+}
+.onward a{font-weight:600}
+
+/* ---------- 제품 사진 ---------- */
+figure.shot{margin:0 0 26px}
+figure.shot img, figure.shot video{
+  width:100%; height:auto; display:block; border-radius:12px;
+  background:var(--line-soft); border:1px solid var(--line);
+}
+figure.shot figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:9px}
+.shot-pair{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 26px}
+@media (max-width:560px){ .shot-pair{grid-template-columns:1fr} }
+.shot-pair figure{margin:0}
+.shot-pair figcaption{text-align:center}
+figure.shot.narrow{max-width:420px}
+
+/* ---------- 제품 페이지 ---------- */
+.spec dt{font-size:13px; color:var(--ink-faint); letter-spacing:.04em; margin-top:14px}
+.spec dd{margin:2px 0 0; font-size:16px}
+.todo{
+  background:var(--warn-tint); color:var(--warn); border:1px dashed var(--warn);
+  border-radius:6px; padding:1px 7px; font-size:13.5px; font-weight:600; white-space:nowrap;
+}
+.buy{
+  display:inline-block; background:var(--accent); color:#FFFFFF; text-decoration:none;
+  font-weight:600; padding:13px 26px; border-radius:10px; font-size:16px; margin:6px 0 0;
+}
+.buy:hover{background:var(--accent-ink); color:#FFFFFF}
+
+/* ---------- 푸터 ---------- */
+.site-foot{border-top:1px solid var(--line); background:var(--raised); margin-top:40px}
+.site-foot .inner{max-width:var(--maxw); margin:0 auto; padding:34px 24px 44px; font-size:14px; color:var(--ink-soft)}
+.site-foot .disclose{
+  border-left:3px solid var(--accent-line); padding-left:14px; margin:0 0 22px; max-width:620px;
+}
+.site-foot nav{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:16px}
+.site-foot nav a{color:var(--ink-soft); text-decoration:none}
+.site-foot nav a:hover{color:var(--ink); text-decoration:underline}
+.site-foot .fine{font-size:13px; color:var(--ink-faint); margin:0}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://normalpint.github.io/learn/cpap-adherence/#article",
+  "headline": "양압기는 왜 계속 쓰기 어려운가 — 순응도 연구가 말하는 것",
+  "description": "양압기(CPAP)의 효능은 확립되어 있으나 실제 사용 지속률은 낮습니다. 비순응률 보고치, 20년 추세, 4시간 기준의 근거, 순응도를 실제로 올린 개입을 원문 수치로 정리했습니다.",
+  "inLanguage": "ko-KR",
+  "datePublished": "2026-08-30",
+  "dateModified": "2026-08-30",
+  "url": "https://normalpint.github.io/learn/cpap-adherence/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://normalpint.github.io/learn/cpap-adherence/" },
+  "isPartOf": { "@id": "https://normalpint.github.io/#website" },
+  "publisher": { "@id": "https://normalpint.github.io/#organization" },
+  "about": [
+    { "@type": "Thing", "name": "지속기도양압", "alternateName": "Continuous Positive Airway Pressure (CPAP)" },
+    { "@type": "Thing", "name": "치료 순응도", "alternateName": "Treatment adherence" },
+    { "@type": "Thing", "name": "폐쇄성 수면무호흡", "alternateName": "Obstructive Sleep Apnea" }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Adherence to continuous positive airway pressure therapy: the challenge to effective treatment",
+      "author": "Weaver TE, Grunstein RR",
+      "datePublished": "2008",
+      "isPartOf": { "@type": "Periodical", "name": "Proceedings of the American Thoracic Society" },
+      "pagination": "173-178",
+      "identifier": "https://doi.org/10.1513/pats.200708-119mg"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Trends in CPAP adherence over twenty years of data collection: a flattened curve",
+      "author": "Rotenberg BW, Murariu D, Pang KP",
+      "datePublished": "2016",
+      "isPartOf": { "@type": "Periodical", "name": "Journal of Otolaryngology - Head & Neck Surgery" },
+      "pagination": "43",
+      "identifier": "https://doi.org/10.1186/s40463-016-0156-0"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Educational, supportive and behavioural interventions to improve usage of continuous positive airway pressure machines in adults with obstructive sleep apnoea",
+      "author": "Askland K, Wright L, Wozniak DR, Emmanuel T, Caston J, Smith I",
+      "datePublished": "2020",
+      "isPartOf": { "@type": "Periodical", "name": "Cochrane Database of Systematic Reviews" },
+      "identifier": "https://doi.org/10.1002/14651858.CD007736.pub3"
+    }
+  ],
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://normalpint.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "자료실", "item": "https://normalpint.github.io/learn/" },
+      { "@type": "ListItem", "position": 3, "name": "양압기는 왜 계속 쓰기 어려운가", "item": "https://normalpint.github.io/learn/cpap-adherence/" }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="/"><span class="dot"></span>코고리스 <small>수면 호흡 자료실</small></a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+<nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span>›</span><a href="/learn/">자료실</a><span>›</span>양압기는 왜 계속 쓰기 어려운가</nav>
+<main id="main" class="doc">
+
+<article>
+  <div class="doc-head">
+    <span class="kicker">09 · 치료 순응도</span>
+    <h1>양압기는 왜 계속 쓰기 어려운가</h1>
+    <p class="summary">
+      양압기(CPAP)는 폐쇄성 수면무호흡의 <strong>1차 표준 치료</strong>이고, 기도를 열어두는 효능은 확립되어 있습니다.
+      그런데 <strong>효능이 있다는 것과 사람들이 실제로 계속 쓴다는 것은 다른 문제</strong>입니다.
+      이 문서는 그 간극을 연구가 보고한 숫자 그대로 정리합니다.
+    </p>
+    <p class="doc-meta">최종 검토 2026-08-30 · 읽는 데 약 7분</p>
+  </div>
+
+  <section id="efficacy">
+    <h2>효능과 실제 효과는 어떻게 다른가요?</h2>
+
+    <div class="answer">
+      <p><strong>효능(efficacy)</strong>은 "제대로 썼을 때 듣는가"이고, <strong>실제 효과(effectiveness)</strong>는 "현실에서 얼마나 이득이 남는가"입니다. 양압기는 <strong>효능이 매우 높은 치료</strong>입니다. 문제는 그 효능이 <strong>착용하고 있는 시간에만</strong> 발생한다는 점입니다.</p>
+    </div>
+
+    <p>
+      약과 비교하면 이해가 쉽습니다. 하루 한 알 먹는 약은 잊어버려도 혈중 농도가 어느 정도 남습니다.
+      양압기는 그렇지 않습니다. <strong>벗는 순간 효과가 0이 됩니다.</strong>
+      그래서 이 치료에서는 "얼마나 잘 듣는가"만큼 <strong>"얼마나 오래 쓰고 있는가"</strong>가 결과를 좌우합니다.
+    </p>
+
+    <p>
+      <cite>Weaver &amp; Grunstein(2008)</cite>의 표현이 이 상황을 정확히 요약합니다 —
+      상기도 폐쇄를 되돌리는 <strong>양압기의 높은 효능에도 불구하고, 치료의 실제 효과는 처방된 치료에 대한
+      들쭉날쭉한 순응도 때문에 제한된다</strong>는 것입니다.
+    </p>
+  </section>
+
+  <section id="rate">
+    <h2>실제로 얼마나 많은 사람이 계속 쓰지 못하나요?</h2>
+
+    <div class="answer">
+      <p>보고치가 넓습니다. <strong>하루 4시간 초과 사용</strong>을 순응 기준으로 삼았을 때 <strong>46~83%가 비순응</strong>으로 보고되었고, 82편을 종합한 체계적 고찰에서는 비순응률이 <strong>34.1%</strong>였습니다. 숫자가 이렇게 벌어지는 이유는 <strong>"순응"의 정의가 연구마다 다르기 때문</strong>입니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 1. 비순응률 보고치</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">출처</th><th scope="col">기준</th><th scope="col">비순응률</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Weaver &amp; Grunstein 2008</strong><br><em>Proc Am Thorac Soc</em></td>
+              <td>1일 <strong>4시간 초과</strong> 사용을 순응으로 정의</td>
+              <td class="num bad">46 ~ 83%</td>
+            </tr>
+            <tr>
+              <td><strong>Rotenberg 2016</strong><br><em>J Otolaryngol Head Neck Surg</em><br>(82편 체계적 고찰)</td>
+              <td>1일 7시간 수면을 기준으로 산출</td>
+              <td class="num bad">34.1%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <div class="note">
+      <b>두 숫자가 다른 것을 이상하게 볼 필요가 없습니다</b>
+      <p>
+        <strong>어디부터를 "쓰고 있다"고 볼 것인가</strong>가 다르면 결과가 달라집니다.
+        <a href="/learn/sleep-study/#criteria">수면다원검사 문서</a>에서 정리한 것과 같은 구조입니다 —
+        같은 현실이라도 <strong>세는 규칙이 바뀌면 숫자가 바뀝니다.</strong>
+        어떤 수치를 인용할 때는 <strong>그 연구가 순응을 어떻게 정의했는지</strong>를 함께 봐야 합니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="trend">
+    <h2>기술이 발전했으니 요즘은 나아졌겠죠?</h2>
+
+    <div class="answer">
+      <p><strong>아닙니다.</strong> 1994년부터 2015년까지 20년치 데이터를 모은 체계적 고찰의 결론은 <strong>"유의한 개선이 없었다"</strong>는 것입니다. 마스크와 기기가 개선되고 여러 개입이 제안되었는데도 순응도 곡선은 <strong>평평했습니다.</strong></p>
+    </div>
+
+    <p>
+      논문 제목 자체가 <strong>"a flattened curve(평평해진 곡선)"</strong>입니다.
+      82편을 검토한 저자들은 이 결과가 <strong>양압기를 최적의 치료로 보는 관점에 의문을 제기한다</strong>고 적었습니다.
+      효능을 부정한 것이 아니라, <strong>현실에서 남는 이득이 기대만큼이 아닐 수 있다</strong>는 지적입니다.
+    </p>
+
+    <div class="caution">
+      <b>오해하면 안 되는 지점</b>
+      <p>
+        이 결과는 <strong>"양압기를 쓰지 말라"는 뜻이 전혀 아닙니다.</strong>
+        중등도 이상 폐쇄성 수면무호흡의 1차 표준 치료는 여전히 양압기이며,
+        <strong>쓸 수 있다면 쓰는 것이 가장 확실합니다.</strong>
+        이 연구가 말하는 것은 <strong>"처방했다"와 "치료되고 있다" 사이에 간극이 있다</strong>는 사실입니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="hours">
+    <h2>왜 하필 "하루 4시간"이 기준인가요?</h2>
+
+    <div class="answer">
+      <p>행정적·연구적 편의로 굳어진 <strong>관행적 절단점</strong>입니다. 다만 <strong>4시간이 충분하다는 뜻은 아닙니다.</strong> <cite>Weaver &amp; Grunstein</cite>은 <strong>6시간을 넘겨 사용할 때</strong> 졸림이 줄고 일상 기능이 개선되며 기억력이 정상 수준으로 회복된다는 근거를 제시합니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 2. 사용 시간과 보고된 이득</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">1일 사용 시간</th><th scope="col">의미</th></tr></thead>
+          <tbody>
+            <tr><td>4시간 이하</td><td class="bad">대부분의 연구·급여 기준에서 <strong>비순응</strong>으로 분류</td></tr>
+            <tr><td>4시간 초과</td><td>순응으로 <strong>분류되는</strong> 구간. 기준을 넘겼다는 의미이지 최적이라는 뜻은 아님</td></tr>
+            <tr><td><strong>6시간 초과</strong></td><td class="good">졸림 감소 · 일상 기능 개선 · <strong>기억력의 정상 수준 회복</strong>이 보고된 구간</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      한국의 건강보험 급여 체계도 유사한 절단점을 씁니다.
+      국민건강보험공단은 양압기 순응 판정을 <strong>최초 처방일부터 90일의 순응기간 중, 연이은 30일에서
+      1일 4시간 이상(12세 이하는 3시간) 사용한 날이 21일 이상</strong>인 경우로 정하고 있습니다.
+      즉 <strong>처음 석 달을 넘기지 못하면 지원이 이어지지 않는</strong> 구조입니다.
+      급여 기준의 세부는 <a href="/learn/sleep-study/#insurance">수면다원검사 문서</a>에 정리했습니다.
+    </p>
+  </section>
+
+  <section id="when">
+    <h2>계속 쓸지 말지는 언제 결정되나요?</h2>
+
+    <div class="answer">
+      <p><strong>매우 이릅니다.</strong> <cite>Weaver &amp; Grunstein</cite>은 <strong>양압기를 받아들일지에 대한 결정이 치료 첫 며칠 사이에 일어난다</strong>고 정리합니다. 몇 달에 걸쳐 서서히 포기하는 것이 아니라, <strong>초반에 방향이 갈립니다.</strong></p>
+    </div>
+
+    <p>
+      그리고 <strong>누가 계속 쓸지를 미리 맞히기는 어렵습니다.</strong>
+      같은 논문은 <strong>순응도를 일관되게 예측하는 단일 인자가 확인되지 않았다</strong>고 적습니다.
+      더 눈여겨볼 대목은 그다음입니다 — <strong>증상과 졸림·일상 기능의 개선을 환자 본인이 어떻게 느끼는지가,
+      질환의 생리학적 중증도보다 사용 양상을 더 크게 좌우할 수 있다</strong>는 것입니다.
+    </p>
+
+    <div class="note">
+      <b>이 문장이 중요한 이유</b>
+      <p>
+        AHI가 높다고 해서 더 열심히 쓰는 것이 아니라는 뜻입니다.
+        <strong>"쓰니까 낫더라"를 본인이 체감했는가</strong>가 더 결정적일 수 있습니다.
+        검사 수치와 당사자의 경험이 항상 같은 방향은 아닙니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="help">
+    <h2>순응도를 실제로 올린 방법은 무엇인가요?</h2>
+
+    <div class="answer">
+      <p>41편·9,005명을 종합한 코크란 체계적 고찰에서, <strong>행동 개입</strong>이 1일 <strong>1.31시간</strong>(높은 근거 수준), <strong>지지적 개입</strong>이 <strong>0.70시간</strong>(중간 근거 수준) 사용 시간을 늘렸습니다. 반면 <strong>교육 단독 개입은 근거 수준이 매우 낮았습니다.</strong></p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 3. 개입 유형별 효과 (Askland et al., <em>Cochrane Database Syst Rev</em>, 2020 · 41편 9,005명)</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">개입 유형</th><th scope="col">사용 시간 증가</th><th scope="col">근거 수준</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>행동 개입</strong><br><span class="doc-meta">8편 · 578명</span></td>
+              <td class="num good"><strong>+1.31</strong> 시간/밤<br><span class="doc-meta">95% CI 0.95 ~ 1.66</span></td>
+              <td class="good">높음</td>
+            </tr>
+            <tr>
+              <td><strong>지지적 개입</strong><br><span class="doc-meta">13편 · 1,426명</span></td>
+              <td class="num"><strong>+0.70</strong> 시간/밤<br><span class="doc-meta">95% CI 0.36 ~ 1.05</span></td>
+              <td>중간</td>
+            </tr>
+            <tr><td>교육 단독 개입</td><td>—</td><td class="bad">매우 낮음 (근거 불충분)</td></tr>
+            <tr><td>혼합 개입</td><td>—</td><td class="bad">매우 낮음 (근거 불충분)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      행동 개입 군에서는 <strong>1일 4시간 이상 사용하는 사람이 1,000명당 371명에서 501명으로</strong> 늘었고,
+      <strong>중도 탈락이 1,000명당 146명에서 101명으로</strong> 줄었습니다.
+      의미 있는 변화이지만, 동시에 <strong>개입을 해도 절반은 여전히 4시간을 못 넘겼다</strong>는 뜻이기도 합니다.
+    </p>
+
+    <p>
+      <cite>Rotenberg(2016)</cite>도 행동 개입의 효과를 <strong>평균 1일 1시간 내외</strong>로 보고해 코크란과 방향이 일치합니다.
+      정리하면 — <strong>도움이 되는 방법은 있고, 그 크기는 하루 한 시간 안팎</strong>입니다.
+    </p>
+  </section>
+
+  <section id="note">
+    <h2>정리</h2>
+    <ul>
+      <li>양압기는 <strong>효능이 확립된 1차 표준 치료</strong>입니다. 이 문서는 그것을 부정하지 않습니다.</li>
+      <li>다만 효과는 <strong>착용 중에만</strong> 발생하므로, 사용 시간이 곧 치료량입니다.</li>
+      <li>비순응률은 정의에 따라 <strong>34.1%에서 46~83%</strong>까지 보고됩니다.</li>
+      <li><strong>20년간 유의한 개선이 없었습니다.</strong> 기기 개선만으로 풀린 문제가 아닙니다.</li>
+      <li>4시간은 관행적 절단점이며, <strong>6시간 초과</strong>에서 더 뚜렷한 이득이 보고됩니다.</li>
+      <li>지속 여부는 <strong>첫 며칠</strong>에 갈리고, <strong>단일 예측 인자는 없습니다.</strong></li>
+      <li>행동 개입이 <strong>1일 1.31시간</strong>을 늘렸습니다. 도움은 되지만 문제를 해소하지는 못합니다.</li>
+    </ul>
+
+    <div class="caution">
+      <b>치료 방침에 관하여</b>
+      <p>
+        이 문서는 순응도라는 <strong>현상</strong>을 정리한 것이며, 치료를 선택하거나 중단할 근거가 아닙니다.
+        양압기가 처방된 상태라면 <strong>임의로 중단하지 마시고</strong>, 불편한 지점을 담당 의료진과 상의하십시오.
+        압력 조정·마스크 교체·가습 등 해결 가능한 원인이 적지 않습니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="refs">
+    <h2>참고 문헌</h2>
+    <ol class="refs">
+      <li><cite>Weaver TE, Grunstein RR.</cite> Adherence to continuous positive airway pressure therapy: the challenge to effective treatment. <em>Proc Am Thorac Soc.</em> 2008;5(2):173–178. doi:10.1513/pats.200708-119mg. PMID 18250209. <span class="doc-meta">— 표 1·표 2, 첫 며칠 결정, 예측 인자 부재의 출처. 초록 원문 대조 완료</span></li>
+      <li><cite>Rotenberg BW, Murariu D, Pang KP.</cite> Trends in CPAP adherence over twenty years of data collection: a flattened curve. <em>J Otolaryngol Head Neck Surg.</em> 2016;45:43. doi:10.1186/s40463-016-0156-0. PMID 27542595. <span class="doc-meta">— 비순응률 34.1%, 20년간 개선 없음의 출처. 초록 원문 대조 완료</span></li>
+      <li><cite>Askland K, Wright L, Wozniak DR, Emmanuel T, Caston J, Smith I.</cite> Educational, supportive and behavioural interventions to improve usage of continuous positive airway pressure machines in adults with obstructive sleep apnoea. <em>Cochrane Database Syst Rev.</em> 2020;4:CD007736. doi:10.1002/14651858.CD007736.pub3. PMID 32255210. <span class="doc-meta">— 표 3의 출처. 초록 원문 대조 완료</span></li>
+      <li><cite>국민건강보험공단.</cite> 양압기 대여료 및 소모품 구입비 (시행 2018-07-02). <span class="doc-meta">— 국내 순응 판정 기준. 2026년 8월 확인</span></li>
+    </ol>
+  </section>
+
+  <p class="onward">
+    다음 문서 → <a href="/learn/snoring-sound/">코골이 소리는 어떻게 측정하는가</a>
+  </p>
+</article>
+
+</main>
+</div>
+
+<footer class="site-foot">
+  <div class="inner">
+    <p class="disclose">
+      본 자료실(<code>/learn/</code>)은 호기 저항 운동 기구를 제조·판매하는 <strong>코고리스</strong>가 운영합니다.
+      자료실의 모든 문서는 공개된 학술 문헌만을 근거로 하며 자사 제품을 언급하거나 그 효능을 주장하지 않습니다.
+      제품 정보는 <a href="/product/">제품 페이지</a>에서 물리적 규격 중심으로 별도 제공합니다.
+    </p>
+    <nav aria-label="푸터 메뉴">
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+    <p class="fine">
+      © 2026 코고리스. 본 사이트의 정보는 일반적인 건강 정보이며 의학적 진단·치료를 대신하지 않습니다.
+      증상이 지속되면 반드시 의료 전문가와 상담하십시오.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

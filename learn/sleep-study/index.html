@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수면다원검사는 무엇을 측정하는가 — 판정 기준과 AHI | 코고리스</title>
+<meta name="description" content="수면다원검사(PSG)는 뇌파·안구운동·근전도·호흡기류·호흡노력·산소포화도를 동시에 기록해 수면과 호흡을 판정하는 검사입니다. 무호흡·저호흡의 판정 정의, AHI 중증도 구간, 판정 기준에 따라 결과가 달라지는 정도, 병원 검사와 가정 간이검사의 차이를 정리했습니다.">
+<link rel="canonical" href="https://normalpint.github.io/learn/sleep-study/">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="코고리스">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="수면다원검사는 무엇을 측정하는가 — 판정 기준과 AHI">
+<meta property="og:description" content="수면다원검사가 기록하는 신호, 무호흡·저호흡 판정 정의, AHI 중증도 구간, 판정 기준이 결과를 바꾸는 정도를 정리한 문서.">
+<meta property="og:url" content="https://normalpint.github.io/learn/sleep-study/">
+<style id="site-css">
+/* 코고리스 — 공용 스타일. 텍스트 우선, 시맨틱 구조 유지. */
+
+:root{
+  --paper:#F5F7F5;
+  --raised:#FFFFFF;
+  --ink:#17211D;
+  --ink-soft:#4C5A54;
+  --ink-faint:#83908A;
+  --line:#DCE3DF;
+  --line-soft:#EAEEEC;
+  --accent:#1F6F63;
+  --accent-ink:#0E4C43;
+  --accent-tint:#E4F1EC;
+  --accent-line:#BEDCD2;
+  --warn:#A3402F;
+  --warn-tint:#F8EAE6;
+  --shadow:0 1px 2px rgba(20,30,26,.05), 0 10px 30px -18px rgba(20,30,26,.18);
+  --maxw:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111917;
+    --raised:#18221F;
+    --ink:#E6EDE9;
+    --ink-soft:#A6B4AE;
+    --ink-faint:#6F7E78;
+    --line:#2A3A35;
+    --line-soft:#212E2A;
+    --accent:#5FC1AE;
+    --accent-ink:#8EDAC8;
+    --accent-tint:#16302A;
+    --accent-line:#2B5048;
+    --warn:#E48876;
+    --warn-tint:#39211C;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111917; --raised:#18221F; --ink:#E6EDE9; --ink-soft:#A6B4AE;
+  --ink-faint:#6F7E78; --line:#2A3A35; --line-soft:#212E2A;
+  --accent:#5FC1AE; --accent-ink:#8EDAC8; --accent-tint:#16302A; --accent-line:#2B5048;
+  --warn:#E48876; --warn-tint:#39211C;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.8; -webkit-font-smoothing:antialiased;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto}}
+
+h1,h2,h3,h4{font-weight:700; color:var(--ink); line-height:1.4; text-wrap:balance; margin:0}
+a{color:var(--accent-ink); text-underline-offset:3px}
+a:hover{color:var(--accent)}
+img{max-width:100%; height:auto}
+
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:8px; top:8px; z-index:99; background:var(--raised); padding:10px 14px; border-radius:8px; border:1px solid var(--line)}
+
+/* ---------- 헤더 ---------- */
+.site-head{border-bottom:1px solid var(--line); background:var(--raised)}
+.site-head .inner{
+  max-width:var(--maxw); margin:0 auto; padding:16px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.brand{display:flex; align-items:baseline; gap:9px; text-decoration:none; color:var(--ink); font-weight:700; font-size:18px}
+.brand .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; align-self:center}
+.brand small{font-weight:500; font-size:12.5px; color:var(--ink-faint); letter-spacing:.02em}
+.site-nav{display:flex; gap:4px; flex-wrap:wrap}
+.site-nav a{
+  text-decoration:none; color:var(--ink-soft); font-size:14.5px; font-weight:500;
+  padding:7px 11px; border-radius:8px;
+}
+.site-nav a:hover{background:var(--line-soft); color:var(--ink)}
+.site-nav a[aria-current="page"]{background:var(--accent-tint); color:var(--accent-ink)}
+
+/* ---------- 레이아웃 ---------- */
+.shell{max-width:var(--maxw); margin:0 auto; padding:0 24px 88px}
+.doc{max-width:760px; margin:0 auto}
+@media (max-width:640px){ .shell{padding:0 18px 64px} body{font-size:16px} }
+
+.crumbs{font-size:13.5px; color:var(--ink-faint); padding:20px 0 0; margin:0}
+.crumbs a{color:var(--ink-faint); text-decoration:none}
+.crumbs a:hover{color:var(--ink); text-decoration:underline}
+.crumbs span{margin:0 6px}
+
+.doc-head{padding:26px 0 30px; border-bottom:1px solid var(--line); margin-bottom:38px}
+.kicker{
+  display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.06em;
+  color:var(--accent-ink); background:var(--accent-tint); border:1px solid var(--accent-line);
+  padding:4px 10px; border-radius:999px; margin-bottom:16px;
+}
+.doc-head h1{font-size:clamp(26px,4.4vw,36px); margin-bottom:14px}
+.summary{font-size:17.5px; color:var(--ink-soft); margin:0}
+.summary strong{color:var(--ink); font-weight:600}
+.doc-meta{margin-top:18px; font-size:13.5px; color:var(--ink-faint)}
+
+section{margin-bottom:44px; scroll-margin-top:24px}
+h2{font-size:23px; margin:0 0 14px; padding-top:6px}
+h3{font-size:18px; margin:30px 0 10px}
+h4{font-size:16px; margin:22px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px; padding-left:22px}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+strong{font-weight:600}
+
+/* 두괄식 답변 블록 */
+.answer{
+  background:var(--accent-tint); border:1px solid var(--accent-line);
+  border-radius:12px; padding:16px 20px; margin:0 0 22px;
+}
+.answer p{margin:0; color:var(--ink)}
+.answer p + p{margin-top:10px}
+
+/* ---------- 다이어그램 ---------- */
+figure.diagram{margin:0 0 28px}
+figure.diagram svg{width:100%; height:auto; display:block}
+figure.diagram figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:10px}
+.legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:12px; font-size:13.5px; color:var(--ink-soft)}
+.legend span{display:flex; align-items:center; gap:7px}
+.legend i{width:22px; height:12px; border-radius:4px; flex:none; display:block}
+.legend i.solid{background:var(--accent-tint); border:1.5px solid var(--accent)}
+.legend i.dashed{background:transparent; border:1.5px dashed var(--ink-faint)}
+
+/* ---------- 표 ---------- */
+figure.table{margin:0 0 26px}
+figure.table figcaption{font-size:13.5px; color:var(--ink-faint); margin-bottom:8px}
+.scroll{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--raised)}
+table{border-collapse:collapse; width:100%; min-width:520px}
+th,td{text-align:left; padding:11px 16px; font-size:15px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{font-size:13px; font-weight:600; color:var(--ink-faint); background:var(--line-soft); letter-spacing:.02em}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+td.good{color:var(--accent-ink); font-weight:600}
+td.bad{color:var(--warn); font-weight:600}
+
+/* ---------- 콜아웃 ---------- */
+.note,.caution{
+  border-radius:12px; padding:16px 20px; margin:0 0 24px; font-size:15.5px;
+  border:1px solid var(--line); background:var(--line-soft);
+}
+.caution{background:var(--warn-tint); border-color:transparent}
+.note p,.caution p{margin:0; color:var(--ink-soft)}
+.note p+p,.caution p+p{margin-top:10px}
+.note b,.caution b{color:var(--ink); display:block; margin-bottom:5px; font-size:13px; letter-spacing:.05em}
+.caution b{color:var(--warn)}
+
+/* ---------- FAQ ---------- */
+.qa{border-top:1px solid var(--line); padding:24px 0}
+.qa:last-of-type{border-bottom:1px solid var(--line)}
+.qa h3{margin:0 0 10px; font-size:18px}
+.qa p:last-child{margin-bottom:0}
+
+/* ---------- 카드 ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:0 0 30px}
+.card{
+  display:block; text-decoration:none; color:inherit; background:var(--raised);
+  border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:var(--shadow);
+}
+.card:hover{border-color:var(--accent-line)}
+.card h3{margin:0 0 7px; font-size:17px; color:var(--ink)}
+.card p{margin:0; font-size:14.5px; color:var(--ink-soft); line-height:1.65}
+.card .tag{font-size:12px; color:var(--ink-faint); letter-spacing:.05em; display:block; margin-bottom:9px}
+
+/* ---------- 참고문헌 ---------- */
+ol.refs{padding-left:20px; font-size:14.5px; color:var(--ink-soft); line-height:1.7}
+ol.refs li{margin-bottom:12px}
+ol.refs cite{font-style:normal; color:var(--ink)}
+
+/* ---------- 다음 단계 링크 ---------- */
+.onward{
+  border-top:1px solid var(--line); margin-top:8px; padding-top:22px;
+  font-size:15.5px; color:var(--ink-soft);
+}
+.onward a{font-weight:600}
+
+/* ---------- 제품 사진 ---------- */
+figure.shot{margin:0 0 26px}
+figure.shot img, figure.shot video{
+  width:100%; height:auto; display:block; border-radius:12px;
+  background:var(--line-soft); border:1px solid var(--line);
+}
+figure.shot figcaption{font-size:13.5px; color:var(--ink-faint); margin-top:9px}
+.shot-pair{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 26px}
+@media (max-width:560px){ .shot-pair{grid-template-columns:1fr} }
+.shot-pair figure{margin:0}
+.shot-pair figcaption{text-align:center}
+figure.shot.narrow{max-width:420px}
+
+/* ---------- 제품 페이지 ---------- */
+.spec dt{font-size:13px; color:var(--ink-faint); letter-spacing:.04em; margin-top:14px}
+.spec dd{margin:2px 0 0; font-size:16px}
+.todo{
+  background:var(--warn-tint); color:var(--warn); border:1px dashed var(--warn);
+  border-radius:6px; padding:1px 7px; font-size:13.5px; font-weight:600; white-space:nowrap;
+}
+.buy{
+  display:inline-block; background:var(--accent); color:#FFFFFF; text-decoration:none;
+  font-weight:600; padding:13px 26px; border-radius:10px; font-size:16px; margin:6px 0 0;
+}
+.buy:hover{background:var(--accent-ink); color:#FFFFFF}
+
+/* ---------- 푸터 ---------- */
+.site-foot{border-top:1px solid var(--line); background:var(--raised); margin-top:40px}
+.site-foot .inner{max-width:var(--maxw); margin:0 auto; padding:34px 24px 44px; font-size:14px; color:var(--ink-soft)}
+.site-foot .disclose{
+  border-left:3px solid var(--accent-line); padding-left:14px; margin:0 0 22px; max-width:620px;
+}
+.site-foot nav{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:16px}
+.site-foot nav a{color:var(--ink-soft); text-decoration:none}
+.site-foot nav a:hover{color:var(--ink); text-decoration:underline}
+.site-foot .fine{font-size:13px; color:var(--ink-faint); margin:0}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://normalpint.github.io/learn/sleep-study/#article",
+  "headline": "수면다원검사는 무엇을 측정하는가 — 판정 기준과 AHI",
+  "description": "수면다원검사(PSG)가 기록하는 신호, 무호흡·저호흡의 판정 정의, AHI 중증도 구간, 판정 기준이 결과를 바꾸는 정도, 병원 검사와 가정 간이검사의 차이를 정리했습니다.",
+  "inLanguage": "ko-KR",
+  "datePublished": "2026-08-30",
+  "dateModified": "2026-08-30",
+  "url": "https://normalpint.github.io/learn/sleep-study/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://normalpint.github.io/learn/sleep-study/" },
+  "isPartOf": { "@id": "https://normalpint.github.io/#website" },
+  "publisher": { "@id": "https://normalpint.github.io/#organization" },
+  "about": [
+    { "@type": "Thing", "name": "수면다원검사", "alternateName": "Polysomnography (PSG)" },
+    { "@type": "Thing", "name": "무호흡·저호흡 지수", "alternateName": "Apnea-Hypopnea Index (AHI)" },
+    { "@type": "Thing", "name": "폐쇄성 수면무호흡", "alternateName": "Obstructive Sleep Apnea" }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Clinical Practice Guideline for Diagnostic Testing for Adult Obstructive Sleep Apnea: An American Academy of Sleep Medicine Clinical Practice Guideline",
+      "author": "Kapur VK, Auckley DH, Chowdhuri S, Kuhlmann DC, Mehra R, Ramar K, Harrod CG",
+      "datePublished": "2017",
+      "isPartOf": { "@type": "Periodical", "name": "Journal of Clinical Sleep Medicine" },
+      "pagination": "479-504",
+      "identifier": "https://doi.org/10.5664/jcsm.6506"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Effect of Three Hypopnea Scoring Criteria on OSA Prevalence and Associated Comorbidities in the General Population",
+      "author": "Hirotsu C, Haba-Rubio J, Andries D, Tobback N, Marques-Vidal P, Vollenweider P, Waeber G, Heinzer R",
+      "datePublished": "2019",
+      "isPartOf": { "@type": "Periodical", "name": "Journal of Clinical Sleep Medicine" },
+      "pagination": "183-194",
+      "identifier": "https://doi.org/10.5664/jcsm.7612"
+    }
+  ],
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://normalpint.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "자료실", "item": "https://normalpint.github.io/learn/" },
+      { "@type": "ListItem", "position": 3, "name": "수면다원검사는 무엇을 측정하는가", "item": "https://normalpint.github.io/learn/sleep-study/" }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="/"><span class="dot"></span>코고리스 <small>수면 호흡 자료실</small></a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+<nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span>›</span><a href="/learn/">자료실</a><span>›</span>수면다원검사는 무엇을 측정하는가</nav>
+<main id="main" class="doc">
+
+<article>
+  <div class="doc-head">
+    <span class="kicker">08 · 진단</span>
+    <h1>수면다원검사는 무엇을 측정하는가</h1>
+    <p class="summary">
+      이 자료실의 여러 문서가 "수면 중 호흡 정지가 의심되면 <strong>수면다원검사가 먼저</strong>"라고 적고 있습니다.
+      그렇다면 그 검사는 정확히 무엇을 재고, 어떤 기준으로 판정하며,
+      <strong>그 기준이 바뀌면 결과가 얼마나 달라지는지</strong>를 정리합니다.
+    </p>
+    <p class="doc-meta">최종 검토 2026-08-30 · 읽는 데 약 7분</p>
+  </div>
+
+  <section id="what">
+    <h2>수면다원검사는 어떤 검사인가요?</h2>
+
+    <div class="answer">
+      <p>하룻밤 자는 동안 <strong>뇌파·안구운동·근긴장도·심전도·호흡기류·호흡노력·산소포화도·체위</strong>를 동시에 기록하는 검사입니다. 두 가지를 함께 봅니다 — <strong>지금 자고 있는가(수면 단계)</strong>, 그리고 <strong>숨을 제대로 쉬고 있는가(호흡 사건)</strong>. 이 둘을 겹쳐 봐야 "자는 동안 호흡이 몇 번 멈췄는가"를 셀 수 있습니다.</p>
+    </div>
+
+    <p>
+      영어로는 <strong>Polysomnography(PSG)</strong>입니다.
+      <em>poly-</em>(여러) <em>somno-</em>(잠) <em>-graphy</em>(기록) — 이름 그대로 여러 신호를 동시에 기록한다는 뜻입니다.
+      한 가지만 재서는 판정이 되지 않기 때문입니다.
+      예를 들어 산소포화도만 재면 <strong>깨어 있는 동안의 변화</strong>와 구분할 수 없고,
+      호흡만 재면 <strong>그 순간 실제로 잠들어 있었는지</strong>를 알 수 없습니다.
+    </p>
+
+    <figure class="table">
+      <figcaption>표 1. 수면다원검사가 기록하는 신호와 그 용도</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">기록 신호</th><th scope="col">무엇을 보기 위한 것인가</th></tr></thead>
+          <tbody>
+            <tr><td>뇌파 (EEG)</td><td>잠들었는지, 어느 수면 단계인지, 각성이 일어났는지</td></tr>
+            <tr><td>안구운동 (EOG)</td><td>REM 수면 판정</td></tr>
+            <tr><td>턱 근전도 (EMG)</td><td>근긴장도 — REM 수면 판정에 함께 쓰임</td></tr>
+            <tr><td>다리 근전도</td><td>주기성 사지운동 등 다른 수면장애 감별</td></tr>
+            <tr><td>심전도 (ECG)</td><td>호흡 사건에 동반되는 심박 변화</td></tr>
+            <tr><td><strong>호흡 기류</strong></td><td><strong>공기가 실제로 드나드는 양</strong> — 무호흡·저호흡 판정의 핵심</td></tr>
+            <tr><td><strong>호흡 노력</strong><br><span class="doc-meta">가슴·배 벨트</span></td><td>숨을 <strong>쉬려고 애쓰는데</strong> 공기가 안 통하는지(폐쇄성), 애쓰지도 않는지(중추성) 구분</td></tr>
+            <tr><td><strong>산소포화도</strong> (SpO₂)</td><td>호흡 사건의 결과로 혈중 산소가 떨어지는 정도</td></tr>
+            <tr><td>체위 센서</td><td>바로 누웠을 때만 심해지는지 등 자세 의존성</td></tr>
+            <tr><td>코골이 마이크</td><td>진동음의 발생 시점과 크기</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <div class="note">
+      <b>호흡 노력을 함께 재는 이유</b>
+      <p>
+        공기가 안 통한다는 사실만으로는 원인을 모릅니다.
+        <strong>가슴과 배는 열심히 움직이는데 공기가 안 들어오면</strong> 통로가 막힌 것(폐쇄성)이고,
+        <strong>움직임 자체가 멈췄으면</strong> 뇌가 호흡 명령을 내리지 않은 것(중추성)입니다.
+        이 자료실이 다루는 상기도 협착은 앞쪽에 해당합니다. → <a href="/learn/mechanism/">호흡 원리 문서</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="scoring">
+    <h2>무호흡과 저호흡은 어떻게 판정하나요?</h2>
+
+    <div class="answer">
+      <p>둘 다 <strong>최소 10초 이상 지속</strong>되어야 하나의 사건으로 셉니다. <strong>무호흡</strong>은 공기 흐름이 거의 완전히 끊긴 경우이고, <strong>저호흡</strong>은 부분적으로 줄어들면서 <strong>산소포화도 저하나 각성이 동반된</strong> 경우입니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 2. 무호흡과 저호흡의 구분</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">구분</th><th scope="col">기류 감소</th><th scope="col">추가 조건</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>무호흡</strong><br>(Apnea)</td>
+              <td>거의 완전한 차단<br><span class="doc-meta">판정 매뉴얼은 90% 이상 감소를 기준으로 둡니다</span></td>
+              <td>10초 이상 지속. 호흡 노력의 유무로 폐쇄성·중추성을 나눔</td>
+            </tr>
+            <tr>
+              <td><strong>저호흡</strong><br>(Hypopnea)</td>
+              <td>부분적 감소</td>
+              <td>10초 이상 지속 + <strong>산소포화도 저하 또는 각성</strong>이 동반되어야 함</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      여기서 중요한 것은 <strong>저호흡의 "추가 조건"이 판정 기준마다 다르다</strong>는 점입니다.
+      산소포화도가 <strong>3% 떨어지면</strong> 세는가, <strong>4% 떨어져야</strong> 세는가.
+      각성만 있어도 세는가, 산소 저하가 있어야만 세는가.
+      이 차이가 결과를 크게 바꿉니다. 다음 절이 그 이야기입니다.
+    </p>
+
+    <div class="caution">
+      <b>출처 표기</b>
+      <p>
+        무호흡·저호흡의 판정 정의는 <strong>미국수면의학회(AASM) 판정 매뉴얼</strong>이 정합니다.
+        본 문서는 <strong>매뉴얼 원문에 직접 접근하지 못했고</strong>, 표 2의 지속 시간과 감소 폭 기준은
+        해당 기준을 명시적으로 비교한 <cite>Hirotsu 등(2019)</cite> 및 통용되는 판정 관례를 통해 정리한 것입니다.
+        정확한 문구는 매뉴얼 원문을 확인하시기 바랍니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="ahi">
+    <h2>AHI는 무엇이고 중증도는 어떻게 나누나요?</h2>
+
+    <div class="answer">
+      <p><strong>무호흡·저호흡 지수(AHI, Apnea-Hypopnea Index)</strong>는 <strong>잠든 시간 1시간당 무호흡과 저호흡이 몇 번 있었는지</strong>를 나타내는 값입니다. 폐쇄성 수면무호흡의 진단과 중증도 평가에 쓰이는 주 지표입니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 3. AHI 중증도 구간 (성인)</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">구간</th><th scope="col">AHI (회/시간)</th></tr></thead>
+          <tbody>
+            <tr><td>정상 범위</td><td class="num">5 미만</td></tr>
+            <tr><td>경증</td><td class="num">5 이상 ~ 15 미만</td></tr>
+            <tr><td>중등도</td><td class="num">15 이상 ~ 30 미만</td></tr>
+            <tr><td class="bad">중증</td><td class="num">30 이상</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      계산 자체는 단순합니다. 예를 들어 <strong>6시간을 잤고 무호흡·저호흡 사건이 총 120회</strong>였다면
+      AHI는 120 ÷ 6 = <strong>20</strong>, 중등도에 해당합니다.
+      분모가 "침대에 누워 있던 시간"이 아니라 <strong>실제로 잠든 시간</strong>이라는 점이 중요합니다.
+      뇌파를 함께 재야 하는 이유가 여기에 있습니다.
+    </p>
+  </section>
+
+  <section id="criteria">
+    <h2>판정 기준이 바뀌면 결과도 바뀌나요?</h2>
+
+    <div class="answer">
+      <p><strong>크게 바뀝니다.</strong> 같은 사람들의 같은 검사 기록을 세 가지 판정 기준으로 다시 채점한 연구에서, AHI 5 이상인 사람의 비율이 <strong>46.9%에서 74.5%까지</strong> 벌어졌습니다. 사람이 바뀐 것도, 그날 밤이 바뀐 것도 아닙니다. <strong>저호흡을 세는 규칙만 바뀐 것</strong>입니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 4. 저호흡 판정 기준 세 가지 (Hirotsu et al., <em>J Clin Sleep Med</em>, 2019)</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">기준</th><th scope="col">저호흡으로 세는 조건</th></tr></thead>
+          <tbody>
+            <tr><td>AASM 1999</td><td>기류 <strong>50% 이상</strong> 감소, 또는 그보다 작은 감소에 <strong>산소포화도 3% 이상 저하 또는 각성</strong>이 동반</td></tr>
+            <tr><td>AASM 2007</td><td>기류 <strong>30% 이상</strong> 감소 + <strong>산소포화도 4% 이상 저하</strong></td></tr>
+            <tr><td>AASM 2012</td><td>기류 <strong>30% 이상</strong> 감소 + <strong>산소포화도 3% 이상 저하 또는 각성</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <figure class="table">
+      <figcaption>표 5. 같은 인구 집단을 세 기준으로 채점했을 때의 유병률 (단위 %)</figcaption>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">AHI 기준</th><th scope="col">AASM 1999</th><th scope="col">AASM 2007</th><th scope="col">AASM 2012</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>5 이상 <span class="doc-meta">(경증 이상)</span></td><td class="num">74.5</td><td class="num">46.9</td><td class="num">72.2</td></tr>
+            <tr><td>15 이상 <span class="doc-meta">(중등도 이상)</span></td><td class="num">39.3</td><td class="num">18.8</td><td class="num">36.6</td></tr>
+            <tr><td>30 이상 <span class="doc-meta">(중증)</span></td><td class="num">16.3</td><td class="num">6.8</td><td class="num">14.9</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <div class="note">
+      <b>이 표를 읽는 방법</b>
+      <p>
+        중등도 이상 비율이 <strong>18.8%와 39.3%</strong>로 두 배 넘게 차이 납니다.
+        산소포화도 <strong>4% 기준(2007)</strong>이 가장 보수적이고, <strong>3% 또는 각성(2012)</strong>이 더 많이 잡아냅니다.
+        <strong>"AHI가 얼마"라는 숫자는 어떤 기준으로 채점했는지와 함께 읽어야 합니다.</strong>
+        검사 결과지를 받으셨다면 어떤 기준을 썼는지 확인해 볼 만합니다.
+      </p>
+    </div>
+
+    <div class="caution">
+      <b>이 수치의 한계</b>
+      <p>
+        위 유병률은 <strong>스위스 로잔 지역의 일반 인구 코호트</strong>에서 나온 값으로, 절대 수치가 상당히 높습니다.
+        <strong>이 숫자를 한국인의 유병률로 옮겨 읽으면 안 됩니다.</strong>
+        이 연구에서 의미 있게 읽어야 할 것은 절대값이 아니라 <strong>기준에 따른 상대적 차이</strong>입니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="home">
+    <h2>병원에서 자야 하나요? 집에서 하는 검사는 안 되나요?</h2>
+
+    <div class="answer">
+      <p>둘 다 쓰입니다. 미국수면의학회(AASM) 진료 지침은 <strong>합병증이 없는 전형적 증상의 성인</strong>에게는 병원 수면다원검사와 <strong>가정 간이검사(HSAT) 중 어느 쪽이든</strong> 쓸 수 있다고 권고합니다. 다만 <strong>가정 검사가 음성이거나 판독이 부적절하면 병원 검사를 시행</strong>해야 한다고 명시합니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 6. 병원 검사가 권고되는 경우 (Kapur et al., AASM 지침, 2017)</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">상황</th><th scope="col">권고</th></tr></thead>
+          <tbody>
+            <tr><td>합병증 없는 전형적 증상</td><td class="good">병원 검사 또는 가정 간이검사 모두 가능</td></tr>
+            <tr><td>심폐 질환이 있는 경우</td><td class="bad">병원 수면다원검사</td></tr>
+            <tr><td>신경근 질환이 있는 경우</td><td class="bad">병원 수면다원검사</td></tr>
+            <tr><td>저환기가 의심되는 경우</td><td class="bad">병원 수면다원검사</td></tr>
+            <tr><td>만성 아편계 약물 사용</td><td class="bad">병원 수면다원검사</td></tr>
+            <tr><td>뇌졸중 기왕력</td><td class="bad">병원 수면다원검사</td></tr>
+            <tr><td>중증 불면증</td><td class="bad">병원 수면다원검사</td></tr>
+            <tr><td>가정 검사 결과가 음성 · 판정 불가 · 불충분</td><td class="bad">병원 수면다원검사로 재확인</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>
+      같은 지침은 <strong>문진표나 예측 도구만으로 진단해서는 안 된다</strong>는 것도 강한 권고로 제시합니다.
+      설문으로 위험도를 가늠할 수는 있어도, <strong>그것이 검사를 대신하지는 못한다</strong>는 뜻입니다.
+      스마트폰 앱이나 웨어러블의 코골이·수면 점수 역시 같은 층위에서 읽어야 합니다.
+    </p>
+  </section>
+
+  <section id="insurance">
+    <h2>한국에서는 건강보험이 적용되나요?</h2>
+
+    <div class="answer">
+      <p>적용됩니다. <strong>2018년 7월</strong>부터 수면다원검사와 양압기 치료에 건강보험이 적용되고 있습니다. 다만 <strong>의학적 필요성이 인정되는 경우</strong>에 한하며, 단순 코골이만으로는 급여 대상이 되지 않습니다.</p>
+    </div>
+
+    <figure class="table">
+      <figcaption>표 7. 양압기 급여 대상 기준 (국민건강보험공단 · 시행 2018-07-02)</figcaption>
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">대상</th><th scope="col">기준</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>성인</td>
+              <td>AHI <strong>15 이상</strong>, 또는 AHI <strong>5 이상</strong>이면서 불면증·주간졸음·인지기능 감소·기분장애·고혈압·허혈성 심장질환·뇌졸중 기왕력·산소포화도 85% 미만 중 하나에 해당</td>
+            </tr>
+            <tr>
+              <td>12세 이하 소아</td>
+              <td>AHI <strong>5 이상</strong>, 또는 AHI <strong>1 이상</strong>이면서 불면증·주간졸음·부주의 과행동 등에 해당</td>
+            </tr>
+            <tr>
+              <td>순응 판정</td>
+              <td>최초 처방일부터 90일의 순응기간 중, 연이은 30일에서 <strong>1일 4시간 이상(12세 이하 3시간) 사용한 날이 21일 이상</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <div class="caution">
+      <b>급여 기준은 바뀝니다</b>
+      <p>
+        위 내용은 <strong>2026년 8월 기준으로 국민건강보험공단이 안내하는 내용</strong>입니다.
+        급여 기준과 본인부담률은 고시 개정으로 변경되므로,
+        <strong>실제 검사·처방 전에는 국민건강보험공단 또는 진료 기관에서 최신 기준을 확인하십시오.</strong>
+        이 문서는 제도 안내를 목적으로 하지 않습니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="when">
+    <h2>언제 검사를 고려해야 하나요?</h2>
+
+    <div class="answer">
+      <p>코골이 자체보다 <strong>동반 증상</strong>이 기준입니다. 특히 <strong>목격된 호흡 정지</strong>, <strong>충분히 잤는데도 남는 주간 졸림</strong>, <strong>자다가 숨이 막혀 깨는 경험</strong>은 검사를 고려할 신호로 흔히 언급됩니다.</p>
+    </div>
+
+    <ul>
+      <li>같이 자는 사람이 <strong>숨이 멎는 것을 목격</strong>한 경우</li>
+      <li>7시간 이상 자도 <strong>낮에 견디기 어려운 졸림</strong>이 지속되는 경우</li>
+      <li>자다가 <strong>숨이 막히거나 헐떡이며</strong> 깨는 경우</li>
+      <li>아침 두통, 자다 깨는 횟수 증가, 야간 빈뇨가 함께 있는 경우</li>
+      <li>고혈압이 잘 조절되지 않는 경우</li>
+    </ul>
+
+    <p>
+      반대로 <strong>코를 고는 것 외에 아무 증상이 없다면</strong> 반드시 검사가 필요한 것은 아닙니다.
+      다만 위 신호가 있다면 <strong>기구나 운동을 시도하기 전에</strong> 검사가 먼저입니다.
+      중증 수면무호흡의 1차 표준 치료는 양압기이며, 근육 훈련으로 대체된다는 근거는 없습니다.
+      → <a href="/learn/compare/">대안별 작용 부위와 원리 비교</a>
+    </p>
+  </section>
+
+  <section id="note">
+    <h2>정리</h2>
+    <ul>
+      <li>수면다원검사는 <strong>수면 신호와 호흡 신호를 동시에</strong> 기록합니다. 잠든 시간을 알아야 AHI를 계산할 수 있기 때문입니다.</li>
+      <li>무호흡·저호흡은 <strong>10초 이상</strong> 지속되어야 세며, 저호흡은 <strong>산소 저하나 각성</strong>이 동반되어야 합니다.</li>
+      <li><strong>AHI는 잠든 시간 1시간당 사건 수</strong>이며, 5 / 15 / 30을 경계로 중증도를 나눕니다.</li>
+      <li><strong>판정 기준이 다르면 같은 기록도 다르게 채점됩니다.</strong> 중등도 이상 비율이 18.8%와 39.3%로 갈린 보고가 있습니다.</li>
+      <li>가정 간이검사도 쓰이지만, <strong>음성이거나 판정이 불충분하면 병원 검사로 재확인</strong>해야 합니다.</li>
+      <li><strong>문진표나 예측 도구만으로 진단해서는 안 됩니다.</strong></li>
+    </ul>
+
+    <div class="caution">
+      <b>이 문서의 한계</b>
+      <p>
+        이 문서는 검사의 구조와 판정 방식을 설명할 뿐이며, <strong>개인의 검사 결과를 해석하거나 진단을 대신하지 않습니다.</strong>
+        수치의 의미와 이후 치료 방침은 반드시 수면 전문의와 상담하십시오.
+      </p>
+    </div>
+  </section>
+
+  <section id="refs">
+    <h2>참고 문헌</h2>
+    <ol class="refs">
+      <li><cite>Kapur VK, Auckley DH, Chowdhuri S, Kuhlmann DC, Mehra R, Ramar K, Harrod CG.</cite> Clinical Practice Guideline for Diagnostic Testing for Adult Obstructive Sleep Apnea: An American Academy of Sleep Medicine Clinical Practice Guideline. <em>J Clin Sleep Med.</em> 2017;13(3):479–504. doi:10.5664/jcsm.6506. PMID 28162150. <span class="doc-meta">— 표 6의 권고 출처. 초록 원문 대조 완료</span></li>
+      <li><cite>Hirotsu C, Haba-Rubio J, Andries D, Tobback N, Marques-Vidal P, Vollenweider P, Waeber G, Heinzer R.</cite> Effect of Three Hypopnea Scoring Criteria on OSA Prevalence and Associated Comorbidities in the General Population. <em>J Clin Sleep Med.</em> 2019;15(2):183–194. doi:10.5664/jcsm.7612. PMID 30736872. <span class="doc-meta">— 표 4·표 5의 판정 기준과 유병률 출처. 초록 원문 대조 완료</span></li>
+      <li><cite>국민건강보험공단.</cite> 양압기 대여료 및 소모품 구입비 (시행 2018-07-02). <span class="doc-meta">— 표 7의 급여 기준 출처. 2026년 8월 확인</span></li>
+    </ol>
+  </section>
+
+  <p class="onward">
+    다음 문서 → <a href="/learn/cpap-adherence/">양압기는 왜 계속 쓰기 어려운가</a>
+  </p>
+</article>
+
+</main>
+</div>
+
+<footer class="site-foot">
+  <div class="inner">
+    <p class="disclose">
+      본 자료실(<code>/learn/</code>)은 호기 저항 운동 기구를 제조·판매하는 <strong>코고리스</strong>가 운영합니다.
+      자료실의 모든 문서는 공개된 학술 문헌만을 근거로 하며 자사 제품을 언급하거나 그 효능을 주장하지 않습니다.
+      제품 정보는 <a href="/product/">제품 페이지</a>에서 물리적 규격 중심으로 별도 제공합니다.
+    </p>
+    <nav aria-label="푸터 메뉴">
+      <a href="/learn/">자료실</a>
+      <a href="/learn/mechanism/">호흡 원리</a>
+      <a href="/learn/research/">연구 근거</a>
+      <a href="/learn/compare/">대안 비교</a>
+      <a href="/learn/faq/">자주 묻는 질문</a>
+      <a href="/product/">제품</a>
+    </nav>
+    <p class="fine">
+      © 2026 코고리스. 본 사이트의 정보는 일반적인 건강 정보이며 의학적 진단·치료를 대신하지 않습니다.
+      증상이 지속되면 반드시 의료 전문가와 상담하십시오.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
