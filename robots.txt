@@ -1,4 +1,4 @@
-# 코고리스 — 모든 검색·AI 크롤러 허용
+# 코고리스: 모든 검색·AI 크롤러 허용
 # AI 인용(GEO)이 목표이므로 아래 봇들을 명시적으로 허용합니다.
 
 User-agent: *
@@ -60,4 +60,5 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-Sitemap: https://normalpint.github.io/sitemap.xml
+Sitemap: https://kogoris.com/sitemap.xml
+# LLMs: https://kogoris.com/llms.txt

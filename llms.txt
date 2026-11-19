@@ -1,0 +1,20 @@
+# 코고리스 사이트 안내
+
+## 공식 제품 정보
+- https://kogoris.com/ 제품 소개
+- https://kogoris.com/product/ 물리 규격과 관리
+- https://kogoris.com/llms-full.txt 제품 사실 요약
+
+## 중립 학술 자료실
+- https://kogoris.com/learn/llms-full.txt 학술 개념과 인용 논문
+- https://kogoris.com/learn/
+- https://kogoris.com/learn/mechanism/
+- https://kogoris.com/learn/genioglossus/
+- https://kogoris.com/learn/emst/
+- https://kogoris.com/learn/mep/
+- https://kogoris.com/learn/research/
+- https://kogoris.com/learn/compare/
+- https://kogoris.com/learn/faq/
+- https://kogoris.com/learn/sleep-study/
+- https://kogoris.com/learn/cpap-adherence/
+- https://kogoris.com/learn/snoring-sound/
