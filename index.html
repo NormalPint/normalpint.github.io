@@ -29,7 +29,54 @@
       "@type": "Offer",
       "price": "58900",
       "priceCurrency": "KRW",
-      "url": "https://smartstore.naver.com/soomlife/products/12925076687"
+      "url": "https://smartstore.naver.com/soomlife/products/12925076687",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": 3000,
+          "currency": "KRW"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "KR"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "cutoffTime": "13:00:00+09:00",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 1,
+            "unitCode": "DAY"
+          },
+          "businessDays": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "https://schema.org/Monday",
+              "https://schema.org/Tuesday",
+              "https://schema.org/Wednesday",
+              "https://schema.org/Thursday",
+              "https://schema.org/Friday"
+            ]
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "KR",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 7,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/ReturnShippingFees",
+        "returnShippingFeesAmount": {
+          "@type": "MonetaryAmount",
+          "value": 6000,
+          "currency": "KRW"
+        }
+      }
     },
     "url": "https://kogoris.com/",
     "image": "https://kogoris.com/assets/img/parts-black.jpg",
@@ -40,6 +87,10 @@
       "value": 50,
       "unitCode": "GRM",
       "description": "약 50g"
+    },
+    "brand": {
+      "@type": "Brand",
+      "name": "코고리스"
     }
   },
   {
